@@ -564,21 +564,8 @@ a:hover { color: #b83a20; }
 .footer-meta + .footer-meta { margin-left: 26px; }
 .footer-meta a { color: inherit; }
 @media (max-width: 760px) {
-  .footer { padding-bottom: 118px; }
   .footer-meta { margin-left: 0; }
 }
-
-/* ---------- mobile bar ---------- */
-.mobile-bar {
-  position: fixed; left: 0; right: 0; bottom: 0; z-index: 85;
-  padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
-  background: rgba(238, 241, 247, 0.94);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid var(--line);
-  display: none;
-}
-.mobile-bar .btn { padding: 14px 18px; font-size: 0.95rem; }
-@media (max-width: 760px) { .mobile-bar { display: block; } }
 
 /* ---------- reveal (mixed arrivals: print-head drop, rise, fade) ----------
    Hidden states apply only under html.js, so content is always visible when
@@ -605,13 +592,15 @@ a:hover { color: #b83a20; }
   .hero { padding-top: 34px; }
   .hero .cta-row .btn { width: 100%; }
   .cta-row { flex-direction: column; }
-  .cards { grid-template-columns: 1fr 1fr; gap: 12px; }
-  .card-body { padding: 12px 12px 14px; }
-  .card-body h3 { font-size: 0.98rem; }
-  .card-actions .btn { font-size: 0.78rem; padding: 9px 10px; }
-  .card-link { font-size: 0.74rem; }
+  .cards { grid-template-columns: 1fr; gap: 16px; }
+  .card-body { padding: 14px 16px 16px; }
+  .card-body h3 { font-size: 1.12rem; margin-bottom: 12px; }
+  .card-meta { display: none; }
+  .card-actions { flex-direction: row; align-items: center; justify-content: space-between; gap: 12px; }
+  .card-actions .btn { font-size: 0.88rem; padding: 11px 14px; }
+  .card-link { font-size: 0.78rem; align-self: center; }
   .card-media figcaption {
-    display: block; left: 6px; bottom: 6px; font-size: 0.62rem; padding: 2px 5px;
+    display: block; left: 8px; bottom: 8px; font-size: 0.62rem; padding: 3px 7px;
   }
   .readout li { font-size: 0.62rem; padding: 5px 8px; }
   .est-table th, .est-table td { padding: 11px 12px; }
