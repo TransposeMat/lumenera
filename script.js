@@ -166,7 +166,7 @@
       }
       ctx.restore();
 
-      if (done === 0) {
+      if (done === 0 && frac === 0) {
         // pristine plate + faint nozzle parked at start
         drawNozzle(iso(PLAN[0][0], PLAN[0][1], 2));
         updateHud(0);
@@ -277,7 +277,7 @@
       var dt = Math.min(0.05, (t - lastT) / 1000 || 0.016);
       lastT = t;
       if (playing && t > pausedUntil) {
-        cur += dt * 0.4;
+        cur += dt * (0.4 + 2.6 * Math.max(0, 1 - cur / 4));
         if (cur >= TOTAL) {
           cur = TOTAL;
           playing = false;
