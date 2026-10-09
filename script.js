@@ -45,7 +45,7 @@
     var ctx = canvas.getContext('2d');
     var slider = document.getElementById('layerSlider');
     var readout = document.getElementById('readout');
-    var TOTAL = 240;
+    var TOTAL = 60;
     var FULL_GRAMS = 42;
     var COS30 = Math.sqrt(3) / 2;
 
@@ -99,7 +99,7 @@
       canvas.height = Math.round(h * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       view.s = Math.min((w * 0.56) / UX, (h * 0.58) / UY);
-      view.zPix = (h * 0.24) / TOTAL;
+      view.zPix = (h * 0.30) / TOTAL;
       var stackH = TOTAL * view.zPix;
       var mid = (PLATE.min + PLATE.max) / 2;
       view.cx = w / 2 - mid * UX * view.s;
@@ -178,11 +178,27 @@
         var fill = (i % 2 === 0) ? '#f2a41c' : '#ffb632';
         var isTop = i === done;
         poly(PLAN, i, isTop ? '#ffd75e' : fill, null, 0);
-        if (i % 6 === 0) poly(PLAN, i, null, 'rgba(163, 98, 4, 0.28)', 0.7);
+        if (i % 2 === 0) poly(PLAN, i, null, 'rgba(163, 98, 4, 0.33)', 1.7);
       }
 
       // top surface (previous layer) + the red path being laid on it
       var topZ = done;
+
+      // full outline of the current layer — stays visible across layer changes
+      ctx.save();
+      ctx.beginPath();
+      for (var eo = 0; eo < perim.length; eo++) {
+        var eoP = iso(perim[eo].a[0], perim[eo].a[1], topZ + 0.4);
+        if (eo === 0) ctx.moveTo(eoP[0], eoP[1]); else ctx.lineTo(eoP[0], eoP[1]);
+      }
+      ctx.closePath();
+      ctx.strokeStyle = 'rgba(255, 90, 60, 0.4)';
+      ctx.lineWidth = 2.2;
+      ctx.lineJoin = 'round';
+      ctx.lineCap = 'round';
+      ctx.stroke();
+      ctx.restore();
+
       if (frac > 0) {
         var p = perim.pointAt(frac);
         ctx.save();
@@ -261,7 +277,7 @@
       var dt = Math.min(0.05, (t - lastT) / 1000 || 0.016);
       lastT = t;
       if (playing && t > pausedUntil) {
-        cur += dt * 3;
+        cur += dt * 0.4;
         if (cur >= TOTAL) {
           cur = TOTAL;
           playing = false;
