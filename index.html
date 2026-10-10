@@ -1,621 +1,86 @@
 <!doctype html>
 <html lang="en">
 <head>
-<script>document.documentElement.classList.add('js');</script>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lumenera — 3D Printing Service, Pakistan | Send a Model, Get It Printed</title>
-<meta name="description" content="Send a model link from MakerWorld, Printables or Thingiverse — or your own STL — on WhatsApp. Printed in PLA from 15 Rs per gram, delivered anywhere in Pakistan.">
-<meta property="og:title" content="Lumenera — send a model, get it printed">
-<meta property="og:description" content="Paste a model link or STL on WhatsApp. We print it in PLA from 15 Rs per gram and ship it anywhere in Pakistan.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="assets/og.png">
-<meta name="theme-color" content="#eef1f7">
-<link rel="icon" type="image/png" href="assets/logo.png">
-<link rel="apple-touch-icon" href="assets/logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Lumenera",
-  "description": "PLA 3D printing service in Pakistan. Send a model link or STL file on WhatsApp — printed from 15 Rs per gram and delivered anywhere in Pakistan.",
-  "telephone": "+923487259122",
-  "email": "lumeneraaccessories@gmail.com",
-  "areaServed": { "@type": "Country", "name": "Pakistan" },
-  "priceRange": "Rs. 15 per gram of PLA",
-  "knowsAbout": ["FDM 3D printing", "PLA", "STL printing", "3D printing service"]
-}
-</script>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="theme-color" content="#f7f4ec">
+ <title>Lumenera — Little things. Made just for you.</title>
+ <meta name="description" content="Gifts, desk companions and little things for your home. Choose a model or send your own. PLA 3D printing at Rs 15 per gram, delivered across Pakistan. Order on WhatsApp.">
+ <link rel="canonical" href="https://transposemat.github.io/lumenera/">
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="Little things. Made just for you. — Lumenera">
+ <meta property="og:description" content="Pick a model. We print it. You make it yours. Rs 15 per gram · Delivered across Pakistan · Order on WhatsApp.">
+ <meta property="og:url" content="https://transposemat.github.io/lumenera/">
+ <meta property="og:image" content="https://transposemat.github.io/lumenera/assets/og.png">
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:image:alt" content="Lumenera — Little things. Made just for you. PLA printing at Rs 15 per gram, across Pakistan.">
+ <meta name="twitter:card" content="summary_large_image">
+ <link rel="icon" href="assets/logo.png">
+ <link rel="preload" href="assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+ <link rel="preload" href="assets/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
+ <link rel="stylesheet" href="styles.css">
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Lumenera PLA 3D printing","serviceType":"PLA 3D printing","areaServed":{"@type":"Country","name":"Pakistan"},"provider":{"@type":"Organization","name":"Lumenera","url":"https://transposemat.github.io/lumenera/","telephone":"+92 348 7259122","email":"lumeneraaccessories@gmail.com","logo":"https://transposemat.github.io/lumenera/assets/logo.png"},"description":"PLA 3D printing at Rs 15 per gram of finished print. Final print price and courier charges confirmed on WhatsApp before approval."}</script>
+ <script id="business-config" type="application/json">{"name":"Lumenera","whatsapp":"923487259122","phone":"+92 348 7259122","email":"lumeneraaccessories@gmail.com","rate":15,"currency":"PKR","material":"PLA","area":"Pakistan","canonical":"https://transposemat.github.io/lumenera/"}</script>
+ <script src="script.js" defer></script>
 </head>
 <body>
-
-<!--
-DIRECTION CONTRACT — Print Preview (seed key 1ae476df)
-THESIS: The page is one print in progress in a slicer viewport — gallery cards are plates, how-it-works steps are layers, price is the material estimate — refusing the dark neon tech-hero every print service ships.
-OWN-WORLD: cool plate-grey ground (#eef1f7), white instrument panels with 1px graphite rules, toolpath accents in wall-red, infill-amber, top-yellow and support-blue; WhatsApp green reserved exclusively for ordering actions; mono data stamps (layers, grams, Rs) sit on every claim.
-STORY: A visitor understands they can send a link or a file and receive a printed object; believes 15 Rs/gram and real WhatsApp replies; and sends a model on WhatsApp.
-FIRST VIEWPORT: plain-language promise and green WhatsApp CTA on the left with the PLA · 15 Rs/g readout; on the right a live slicer viewport where the Lumenera "L" prints layer by layer under a draggable layer slider. (Position 5 of 7 grounded directions; the roll assigned it.)
-FORM: slicer layer-viewport interface, sustained across gallery, price estimate, guide diagrams, and the order builder.
-FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance.
--->
-
-<a class="skip" href="#models">Skip to models</a>
-
-<div class="layer-rail" aria-hidden="true"><span class="layer-rail-fill" id="railFill"></span><span class="layer-rail-dot" id="railDot"></span></div>
-
-<header class="topbar">
-  <div class="wrap topbar-in">
-    <a class="brand" href="#top" aria-label="Lumenera home">
-      <img src="assets/logo.png" alt="" width="34" height="34">
-      <span class="brand-name">Lumenera</span>
-    </a>
-    <nav class="nav" aria-label="Sections">
-      <a href="#how">How it works</a>
-      <a href="#models">Models</a>
-      <a href="#send">Send yours</a>
-      <a href="#guide">Guide</a>
-      <a href="#price">Price</a>
-    </nav>
-    <a class="btn btn-wa btn-sm" href="https://wa.me/923487259122" data-wa="generic">
-      <svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.4 15.2L2.1 21.9l4.9-1.5A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.1 15.1l-.3-.2-2.9.9.9-2.8-.2-.3a8.1 8.1 0 0 1 6.6-12.7Zm-2.9 3.6c-.2 0-.5 0-.7.3-.2.3-.9.9-.9 2.1s.9 2.5 1 2.6c.1.2 1.7 2.7 4.2 3.7 2 .8 2.5.7 2.9.6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.5-.3c-.3-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.2.2-.3.2-.6.1a6.7 6.7 0 0 1-2-1.2 7.4 7.4 0 0 1-1.4-1.7c-.1-.2 0-.4.1-.5l.5-.6c.1-.2.2-.3.3-.5v-.5c0-.2-.6-1.4-.8-1.9-.2-.4-.4-.4-.6-.4h-.1Z"/></svg>
-      WhatsApp us
-    </a>
-  </div>
+<!-- THESIS: A personal object studio: want the thing, tap the thing, have it made.
+OWN-WORLD: warm ivory, charcoal, vermilion and ordering green; Fraunces display with Manrope; large truthful imagery and flat editorial surfaces.
+STORY: Choose a community model or send your own; PLA costs Rs 15/g; approve the full quote in WhatsApp.
+FIRST VIEWPORT: Oversized left-side headline, right-side asymmetric three-object display with three direct actions. Mobile leads with the cat keychain and its action, visible within 390x844.
+FORM: The user chose the grounded object-studio direction, candidate 1; seed d17b0d21. Approved plan supplies the code-led composition. Signature interaction: category filters recompose the collection without blocking ordering.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance -->
+<a class="skip-link" href="#models">Skip to the objects</a>
+<header class="header wrap">
+ <a class="brand" href="#top" aria-label="Lumenera home"><img src="assets/logo.png" alt="" width="36" height="36">Lumenera<span class="brand-dot" aria-hidden="true"></span></a>
+ <nav class="nav" aria-label="Main navigation"><a href="#models">Explore models</a><a href="#how">How to order</a></nav>
+ <a class="button button--wa header-wa" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I&#39;d%20like%20to%20get%20something%203D%20printed.%20Please%20help%20me%20choose%20a%20model%20and%20confirm%20the%20print%20price%2C%20colours%20and%20delivery." target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.7 7.4L3 20.5l1.4-4.7A8.5 8.5 0 1 1 20.5 11.7Z" stroke="currentColor" stroke-width="1.65" stroke-linejoin="round"/><path d="M8.2 7.5c.3-.2.7-.1.9.2l1 1.7c.2.3.1.6-.1.8l-.6.7a6.8 6.8 0 0 0 3.5 3.3l.7-.8c.2-.2.5-.3.8-.1l1.8.9c.3.2.4.5.2.8-.5 1-1.3 1.5-2.4 1.2-3.4-1-5.8-3.4-6.7-6.7-.3-1 .1-1.6.9-2Z" fill="currentColor"/></svg> <span>WhatsApp us</span> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </header>
-
 <main id="top">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-copy" data-reveal>
-        <h1>Send any 3D model.<br>We print it.<br><span class="hl">It ships to your door.</span></h1>
-        <p class="lede">Found something on MakerWorld, Printables or Thingiverse? Have your own STL file? Paste the link on WhatsApp and we'll print it in PLA, and deliver it anywhere in Pakistan.</p>
-        <div class="cta-row">
-          <a class="btn btn-wa btn-lg" href="https://wa.me/923487259122" data-wa="generic">
-            <svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.4 15.2L2.1 21.9l4.9-1.5A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.1 15.1l-.3-.2-2.9.9.9-2.8-.2-.3a8.1 8.1 0 0 1 6.6-12.7Zm-2.9 3.6c-.2 0-.5 0-.7.3-.2.3-.9.9-.9 2.1s.9 2.5 1 2.6c.1.2 1.7 2.7 4.2 3.7 2 .8 2.5.7 2.9.6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.5-.3c-.3-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.2.2-.3.2-.6.1a6.7 6.7 0 0 1-2-1.2 7.4 7.4 0 0 1-1.4-1.7c-.1-.2 0-.4.1-.5l.5-.6c.1-.2.2-.3.3-.5v-.5c0-.2-.6-1.4-.8-1.9-.2-.4-.4-.4-.6-.4h-.1Z"/></svg>
-            Send your model on WhatsApp
-          </a>
-          <a class="btn btn-ghost" href="#models">See what people print</a>
-        </div>
-        <ul class="readout mono" aria-label="Service facts">
-          <li>PLA only</li>
-          <li>15 Rs / gram</li>
-          <li>Ships all Pakistan</li>
-          <li>Real replies on WhatsApp</li>
-        </ul>
-      </div>
-
-      <div class="hero-demo panel" data-reveal>
-        <div class="panel-head">
-          <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
-          <span class="mono panel-title">lumenera-mark.gcode</span>
-          <span class="mono panel-badge">PREVIEW</span>
-        </div>
-        <div class="viewport">
-          <canvas id="slicerCanvas" width="640" height="520" role="img" aria-label="Live preview of the Lumenera L printing layer by layer in a slicer"></canvas>
-        </div>
-        <div class="controls">
-          <label class="mono slider-label" for="layerSlider">LAYER</label>
-          <input id="layerSlider" type="range" min="0" max="1000" value="1000" step="1" aria-label="Layer slider — drag to print the model">
-          <output id="readout" class="mono readout-live">LAYER 60/60 · 42 G · RS 630</output>
-        </div>
-        <p class="demo-note mono">LIVE PREVIEW · THE LUMENERA MARK, PRINTED IN PLA. DRAG THE SLIDER.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section class="section" id="how">
-    <div class="wrap">
-      <h2 data-reveal>Model to mailbox, in three layers.</h2>
-      <div class="steps-grid">
-        <article class="step panel" data-reveal>
-          <div class="step-art" aria-hidden="true"><span class="lay lay-1"></span><span class="lay lay-2"></span><span class="lay lay-3"></span></div>
-          <span class="step-n mono">LAYER 01</span>
-          <h3>Send your model</h3>
-          <p>Paste a link from MakerWorld, Printables or Thingiverse, or send your STL file right inside WhatsApp. No account, no upload form, no printer needed.</p>
-        </article>
-        <article class="step panel" data-reveal>
-          <div class="step-art" aria-hidden="true"><span class="lay lay-1"></span><span class="lay lay-2"></span><span class="lay lay-3"></span></div>
-          <span class="step-n mono">LAYER 02</span>
-          <h3>We confirm and print</h3>
-          <p>We check the model, tell you the exact weight and price on WhatsApp, and start printing in PLA once you say go.</p>
-        </article>
-        <article class="step panel" data-reveal>
-          <div class="step-art" aria-hidden="true"><span class="lay lay-1"></span><span class="lay lay-2"></span><span class="lay lay-3"></span></div>
-          <span class="step-n mono">LAYER 03</span>
-          <h3>It ships to you</h3>
-          <p>Fresh off the plate and cleaned up, then couriered to your address, anywhere in Pakistan.</p>
-        </article>
-      </div>
-      <div class="section-cta" data-reveal>
-        <a class="btn btn-wa" href="https://wa.me/923487259122" data-wa="generic">Start with a link on WhatsApp</a>
-        <span class="mono hint">REPLIES COME FROM A REAL PERSON</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section class="section section-plate" id="models">
-    <div class="wrap">
-      <h2 data-reveal>Pick something you like. We'll print it.</h2>
-      <p class="lede" data-reveal>These are real models from MakerWorld. Tap a card and WhatsApp opens with the model link already in the message. Just add your colour and hit send. <span class="mono note-inline">PHOTOS: THE DESIGNERS' OWN SHOTS OF THE MODELS · NOT OUR PRINTS YET.</span></p>
-
-      <div class="filters" role="group" aria-label="Filter models" data-reveal>
-        <button class="chip is-on" data-filter="all" aria-pressed="true">All</button>
-        <button class="chip" data-filter="desk" aria-pressed="false">Desk &amp; tech</button>
-        <button class="chip" data-filter="home" aria-pressed="false">Home &amp; kitchen</button>
-        <button class="chip" data-filter="decor" aria-pressed="false">Decor &amp; plants</button>
-        <button class="chip" data-filter="gifts" aria-pressed="false">Gifts &amp; wearables</button>
-      </div>
-
-      <div class="cards" id="cardGrid">
-
-        <article class="card panel" data-cat="decor" data-reveal>
-          <figure class="card-media">
-            <img src="assets/img/cards/ghost-pumpkin.webp" alt="White knitted-style ghost sitting in an orange 3D printed pumpkin" loading="lazy" width="1010" height="758">
-            <figcaption class="mono">PHOTO: SMOGGY3D · MAKERWORLD</figcaption>
-          </figure>
-          <div class="card-body">
-            <h3>Knitted Ghost in a Pumpkin</h3>
-            <p class="mono card-meta">HALLOWEEN IN A PUMPKIN · MAKERWORLD</p>
-            <div class="card-actions">
-              <a class="btn btn-wa btn-sm" href="https://wa.me/923487259122" data-wa="card" data-model="Knitted Ghost in Pumpkin - Halloween" data-link="https://makerworld.com/en/models/3380360-knitted-ghost-in-pumpkin-halloween">Print this on WhatsApp</a>
-              <a class="card-link" href="https://makerworld.com/en/models/3380360-knitted-ghost-in-pumpkin-halloween" target="_blank" rel="noopener">View model <svg class="ico-ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.2 8.8 L8.8 3.2 M4.6 3.2 H8.8 V7.4"/></svg></a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card panel" data-cat="decor" data-reveal>
-          <figure class="card-media">
-            <img src="assets/img/cards/nature-mountains.webp" alt="Layered black mountain range decor piece with pine trees and a lake" loading="lazy" width="1162" height="872">
-            <figcaption class="mono">PHOTO: RAFFNIX3D · MAKERWORLD</figcaption>
-          </figure>
-          <div class="card-body">
-            <h3>Nature Mountains</h3>
-            <p class="mono card-meta">A TOUCH OF WILDERNESS · MAKERWORLD</p>
-            <div class="card-actions">
-              <a class="btn btn-wa btn-sm" href="https://wa.me/923487259122" data-wa="card" data-model="Nature Mountains" data-link="https://makerworld.com/en/models/1080631-nature-mountains">Print this on WhatsApp</a>
-              <a class="card-link" href="https://makerworld.com/en/models/1080631-nature-mountains" target="_blank" rel="noopener">View model <svg class="ico-ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.2 8.8 L8.8 3.2 M4.6 3.2 H8.8 V7.4"/></svg></a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card panel" data-cat="gifts" data-reveal>
-          <figure class="card-media">
-            <img src="assets/img/cards/cat-keychain.webp" alt="Pink and black cat-shaped 3D printed keychains on a dish" loading="lazy" width="1184" height="888">
-            <figcaption class="mono">PHOTO: CLOREN · MAKERWORLD</figcaption>
-          </figure>
-          <div class="card-body">
-            <h3>Cute Cat Keychain</h3>
-            <p class="mono card-meta">DURABLE LITTLE KITTEN · MAKERWORLD</p>
-            <div class="card-actions">
-              <a class="btn btn-wa btn-sm" href="https://wa.me/923487259122" data-wa="card" data-model="Cute Cat Keychain" data-link="https://makerworld.com/en/models/2619796-cute-cat-keychain">Print this on WhatsApp</a>
-              <a class="card-link" href="https://makerworld.com/en/models/2619796-cute-cat-keychain" target="_blank" rel="noopener">View model <svg class="ico-ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.2 8.8 L8.8 3.2 M4.6 3.2 H8.8 V7.4"/></svg></a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card panel" data-cat="gifts" data-reveal>
-          <figure class="card-media">
-            <img src="assets/img/cards/bracelet.webp" alt="Red woven Arrowave bracelet 3D printed in one piece" loading="lazy" width="1200" height="900">
-            <figcaption class="mono">PHOTO: MRPRINT3D · MAKERWORLD</figcaption>
-          </figure>
-          <div class="card-body">
-            <h3>Arrowave Bracelet</h3>
-            <p class="mono card-meta">WEIGHS ONLY 3 GRAMS · MAKERWORLD</p>
-            <div class="card-actions">
-              <a class="btn btn-wa btn-sm" href="https://wa.me/923487259122" data-wa="card" data-model="Arrowave Bracelet (Only 3g of filament)" data-link="https://makerworld.com/en/models/2819040-arrowave-bracelet-only-3g-of-filament">Print this on WhatsApp</a>
-              <a class="card-link" href="https://makerworld.com/en/models/2819040-arrowave-bracelet-only-3g-of-filament" target="_blank" rel="noopener">View model <svg class="ico-ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.2 8.8 L8.8 3.2 M4.6 3.2 H8.8 V7.4"/></svg></a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card panel" data-cat="desk" data-reveal>
-          <figure class="card-media">
-            <img src="assets/img/cards/phone-stand.webp" alt="Black 3D printed phone stand holding a smartphone on a desk" loading="lazy" width="1200" height="899">
-            <figcaption class="mono">PHOTO: SHELDER · MAKERWORLD</figcaption>
-          </figure>
-          <div class="card-body">
-            <h3>Phone Stand</h3>
-            <p class="mono card-meta">PROPS YOUR PHONE UP · MAKERWORLD</p>
-            <div class="card-actions">
-              <a class="btn btn-wa btn-sm" href="https://wa.me/923487259122" data-wa="card" data-model="THE BEST PHONE STAND" data-link="https://makerworld.com/en/models/1976503-the-best-phone-stand">Print this on WhatsApp</a>
-              <a class="card-link" href="https://makerworld.com/en/models/1976503-the-best-phone-stand" target="_blank" rel="noopener">View model <svg class="ico-ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.2 8.8 L8.8 3.2 M4.6 3.2 H8.8 V7.4"/></svg></a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card panel" data-cat="desk" data-reveal>
-          <figure class="card-media">
-            <img src="assets/img/cards/pen-holder.webp" alt="Pink desk pen holder lettered with the name Amelia holding pens" loading="lazy" width="1200" height="899">
-            <figcaption class="mono">PHOTO: GREEDYDOG · MAKERWORLD</figcaption>
-          </figure>
-          <div class="card-body">
-            <h3>Custom Name Pen Holder</h3>
-            <p class="mono card-meta">YOUR NAME ON YOUR DESK · MAKERWORLD</p>
-            <div class="card-actions">
-              <a class="btn btn-wa btn-sm" href="https://wa.me/923487259122" data-wa="card" data-model="Custom Name Pen Holder Personalized Desk Organizer" data-link="https://makerworld.com/en/models/3282467-custom-name-pen-holder-personalized-desk-organizer">Print this on WhatsApp</a>
-              <a class="card-link" href="https://makerworld.com/en/models/3282467-custom-name-pen-holder-personalized-desk-organizer" target="_blank" rel="noopener">View model <svg class="ico-ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.2 8.8 L8.8 3.2 M4.6 3.2 H8.8 V7.4"/></svg></a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card panel" data-cat="desk" data-reveal>
-          <figure class="card-media">
-            <img src="assets/img/cards/headphone-hook.webp" alt="Wood-look 3D printed hook holding black headphones under a desk" loading="lazy" width="1200" height="900">
-            <figcaption class="mono">PHOTO: YEKTA · MAKERWORLD</figcaption>
-          </figure>
-          <div class="card-body">
-            <h3>Universal Headphone Hook</h3>
-            <p class="mono card-meta">HEADPHONES OFF THE DESK · MAKERWORLD</p>
-            <div class="card-actions">
-              <a class="btn btn-wa btn-sm" href="https://wa.me/923487259122" data-wa="card" data-model="Universal Headphone Hook | Headphone Hanger/Holder" data-link="https://makerworld.com/en/models/3312785-universal-headphone-hook-headphone-hanger-holder">Print this on WhatsApp</a>
-              <a class="card-link" href="https://makerworld.com/en/models/3312785-universal-headphone-hook-headphone-hanger-holder" target="_blank" rel="noopener">View model <svg class="ico-ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.2 8.8 L8.8 3.2 M4.6 3.2 H8.8 V7.4"/></svg></a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card panel" data-cat="home" data-reveal>
-          <figure class="card-media">
-            <img src="assets/img/cards/cat-bowl.webp" alt="White 3D printed bowl shaped like a sleeping curled-up cat" loading="lazy" width="1200" height="900">
-            <figcaption class="mono">PHOTO: HUMILAK · MAKERWORLD</figcaption>
-          </figure>
-          <div class="card-body">
-            <h3>Cute Sleeping Cat Bowl</h3>
-            <p class="mono card-meta">KAWAII DESK BOWL · MAKERWORLD</p>
-            <div class="card-actions">
-              <a class="btn btn-wa btn-sm" href="https://wa.me/923487259122" data-wa="card" data-model="Cute Sleeping Cat Bowl" data-link="https://makerworld.com/en/models/1496368-cute-sleeping-cat-bowl">Print this on WhatsApp</a>
-              <a class="card-link" href="https://makerworld.com/en/models/1496368-cute-sleeping-cat-bowl" target="_blank" rel="noopener">View model <svg class="ico-ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.2 8.8 L8.8 3.2 M4.6 3.2 H8.8 V7.4"/></svg></a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card panel" data-cat="decor" data-reveal>
-          <figure class="card-media">
-            <img src="assets/img/cards/mini-planter.webp" alt="Spiral 3D printed mini planters in white and black holding succulents" loading="lazy" width="1200" height="900">
-            <figcaption class="mono">PHOTO: DOT DESIGN · MAKERWORLD</figcaption>
-          </figure>
-          <div class="card-body">
-            <h3>Mini Planter</h3>
-            <p class="mono card-meta">MICRO SPIRAL VASE · MAKERWORLD</p>
-            <div class="card-actions">
-              <a class="btn btn-wa btn-sm" href="https://wa.me/923487259122" data-wa="card" data-model="Mini Planter" data-link="https://makerworld.com/en/models/2084224-mini-planter">Print this on WhatsApp</a>
-              <a class="card-link" href="https://makerworld.com/en/models/2084224-mini-planter" target="_blank" rel="noopener">View model <svg class="ico-ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.2 8.8 L8.8 3.2 M4.6 3.2 H8.8 V7.4"/></svg></a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card panel" data-cat="home" data-reveal>
-          <figure class="card-media">
-            <img src="assets/img/cards/wall-hook.webp" alt="Three 3D printed wall hooks mounted in a row holding a bag and towel" loading="lazy" width="1200" height="900">
-            <figcaption class="mono">PHOTO: YEKTA · MAKERWORLD</figcaption>
-          </figure>
-          <div class="card-body">
-            <h3>Wall Hook v2</h3>
-            <p class="mono card-meta">COATS, TOWELS, BAGS · MAKERWORLD</p>
-            <div class="card-actions">
-              <a class="btn btn-wa btn-sm" href="https://wa.me/923487259122" data-wa="card" data-model="Wall Hook v2 | Coat Hanger | Towel Rack" data-link="https://makerworld.com/en/models/3378335-wall-hook-v2-coat-hanger-towel-rack">Print this on WhatsApp</a>
-              <a class="card-link" href="https://makerworld.com/en/models/3378335-wall-hook-v2-coat-hanger-towel-rack" target="_blank" rel="noopener">View model <svg class="ico-ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.2 8.8 L8.8 3.2 M4.6 3.2 H8.8 V7.4"/></svg></a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card panel" data-cat="home" data-reveal>
-          <figure class="card-media">
-            <img src="assets/img/cards/grocery-carrier.webp" alt="Hand carrying grocery bags with a blue ergonomic 3D printed handle" loading="lazy" width="1200" height="900">
-            <figcaption class="mono">PHOTO: LORENZ 3D · MAKERWORLD</figcaption>
-          </figure>
-          <div class="card-body">
-            <h3>Grocery Bag Carrier</h3>
-            <p class="mono card-meta">BAGS THAT DON'T BITE · MAKERWORLD</p>
-            <div class="card-actions">
-              <a class="btn btn-wa btn-sm" href="https://wa.me/923487259122" data-wa="card" data-model="Effortless Shopping - Ergonomic Grocery Bag Carrier" data-link="https://makerworld.com/en/models/2983228-effortless-shopping-ergonomic-grocery-bag-carrier">Print this on WhatsApp</a>
-              <a class="card-link" href="https://makerworld.com/en/models/2983228-effortless-shopping-ergonomic-grocery-bag-carrier" target="_blank" rel="noopener">View model <svg class="ico-ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.2 8.8 L8.8 3.2 M4.6 3.2 H8.8 V7.4"/></svg></a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card panel" data-cat="home" data-reveal>
-          <figure class="card-media">
-            <img src="assets/img/cards/box-opener.webp" alt="Small blue 3D printed box opener with a rounded grip" loading="lazy" width="1080" height="810">
-            <figcaption class="mono">PHOTO: LP CREATIONS · MAKERWORLD</figcaption>
-          </figure>
-          <div class="card-body">
-            <h3>Ultra Light Box Opener</h3>
-            <p class="mono card-meta">3.5 GRAMS OF HANDY · MAKERWORLD</p>
-            <div class="card-actions">
-              <a class="btn btn-wa btn-sm" href="https://wa.me/923487259122" data-wa="card" data-model="Ultra Light Box Opener – Only 3.5 g" data-link="https://makerworld.com/en/models/3388075-ultra-light-box-opener-only-3-5-g">Print this on WhatsApp</a>
-              <a class="card-link" href="https://makerworld.com/en/models/3388075-ultra-light-box-opener-only-3-5-g" target="_blank" rel="noopener">View model <svg class="ico-ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.2 8.8 L8.8 3.2 M4.6 3.2 H8.8 V7.4"/></svg></a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card card-own" data-cat="all" data-reveal>
-          <div class="own-in">
-            <span class="own-plus" aria-hidden="true"></span>
-            <h3>Your model goes here</h3>
-            <p>Already have an STL, a link, or a broken part you need copied? Send it straight to WhatsApp.</p>
-            <a class="btn btn-wa" href="https://wa.me/923487259122" data-wa="own">Send your own model</a>
-          </div>
-        </article>
-
-      </div>
-      <p class="mono grid-note" data-reveal>EVERY CARD: 15 RS PER GRAM OF FINISHED PRINT · EXACT WEIGHT CONFIRMED ON WHATSAPP BEFORE WE PRINT · <a href="credits.html">PHOTO CREDITS</a></p>
-    </div>
-  </section>
-
-  <!-- BUILDER -->
-  <section class="section" id="send">
-    <div class="wrap">
-      <h2 data-reveal>Build your WhatsApp message in 30 seconds.</h2>
-      <div class="builder-grid">
-        <form class="builder panel" data-reveal id="builderForm" novalidate>
-          <div class="field">
-            <label class="mono" for="bLink">MODEL LINK <span class="opt">(optional)</span></label>
-            <input type="url" id="bLink" inputmode="url" autocomplete="off" placeholder="https://www.makerworld.com/en/models/…">
-          </div>
-          <div class="field">
-            <label class="mono" for="bDesc">WHAT IS IT? <span class="opt">(if no link)</span></label>
-            <input type="text" id="bDesc" maxlength="80" placeholder="e.g. a phone stand, or my own STL file">
-          </div>
-          <div class="field-row">
-            <div class="field">
-              <label class="mono" for="bColour">COLOUR</label>
-              <input type="text" id="bColour" maxlength="40" placeholder="e.g. black, or ask us what's in stock">
-            </div>
-            <div class="field field-qty">
-              <label class="mono" for="bQty">QTY</label>
-              <input type="number" id="bQty" min="1" max="50" step="1" value="1" inputmode="numeric">
-            </div>
-          </div>
-          <div class="field">
-            <label class="mono" for="bCity">YOUR CITY</label>
-            <input type="text" id="bCity" maxlength="40" placeholder="e.g. Lahore">
-          </div>
-          <a class="btn btn-wa btn-lg btn-block" id="builderLink" href="https://wa.me/923487259122" data-wa="builder">Open WhatsApp with this message</a>
-          <p class="mono builder-note">NO FILE YET? WHATSAPP US ANYWAY · YOU CAN ATTACH THE STL IN THE CHAT.</p>
-        </form>
-        <aside class="builder-preview panel" data-reveal aria-label="Message preview">
-          <div class="panel-head">
-            <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
-            <span class="mono panel-title">message-preview.txt</span>
-          </div>
-          <div class="chat-preview">
-            <div class="bubble-out" id="msgPreview">Hi Lumenera! I'd like a 3D print.<br>Model: (link or description)<br>Colour: (or ask us)<br>Quantity: 1<br>City: (your city)<br><br>I'll send the file/link here if needed.</div>
-          </div>
-          <p class="mono preview-note">THIS EXACT TEXT OPENS IN WHATSAPP · EDIT IT THERE IF YOU LIKE.</p>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICE -->
-  <section class="section section-plate" id="price">
-    <div class="wrap price-wrap">
-      <div data-reveal>
-          <h2>15 Rs per gram.<br>Nothing hidden.</h2>
-        <p class="lede">Your price is simply the finished print's weight × 15 Rs. We confirm the exact weight on WhatsApp <em>before</em> anything gets printed, so there are no surprises.</p>
-        <ul class="price-facts">
-          <li><span class="mono">MATERIAL</span> PLA · sturdy, detailed, everyday-tough</li>
-          <li><span class="mono">QUOTE</span> Weight &amp; price confirmed on WhatsApp first</li>
-          <li><span class="mono">DELIVERY</span> Courier anywhere in Pakistan; charge depends on your city</li>
-        </ul>
-      </div>
-      <div class="estimate panel" data-reveal>
-        <div class="panel-head">
-          <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
-          <span class="mono panel-title">material-estimate</span>
-          <span class="mono panel-badge">PLA · 15 RS/G</span>
-        </div>
-        <table class="est-table">
-          <thead>
-            <tr><th scope="col">PRINT</th><th scope="col">TYPICAL WEIGHT</th><th scope="col">PRICE</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Small keychain</td><td class="mono">~10 g</td><td class="mono price-cell">≈ Rs 150</td></tr>
-            <tr><td>Phone stand</td><td class="mono">~50 g</td><td class="mono price-cell">≈ Rs 750</td></tr>
-            <tr><td>Medium vase</td><td class="mono">~150 g</td><td class="mono price-cell">≈ Rs 2,250</td></tr>
-            <tr><td>Articulated dragon</td><td class="mono">~300 g</td><td class="mono price-cell">≈ Rs 4,500</td></tr>
-          </tbody>
-        </table>
-        <p class="mono est-note">EXAMPLE WEIGHTS TO GIVE YOU A FEEL · YOUR EXACT WEIGHT IS CONFIRMED ON WHATSAPP BEFORE PRINTING.</p>
-        <a class="btn btn-wa btn-block" href="https://wa.me/923487259122" data-wa="generic">Ask for a quote on WhatsApp</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- GUIDE -->
-  <section class="section" id="guide">
-    <div class="wrap">
-      <h2 data-reveal>Never found a 3D model before? Find one in 60 seconds.</h2>
-      <p class="lede" data-reveal>The trick: <strong>you don't download anything.</strong> Find something you like on any of these sites, copy the page link, and send it to us on WhatsApp. That's the whole thing. <span class="mono note-inline">PANELS BELOW ARE CLEAR DIAGRAMS OF THE REAL SCREENS · SITES CHANGE THEIR LOOKS, THE STEPS STAY THE SAME.</span></p>
-
-      <div class="guide-grid">
-
-        <article class="site-panel panel" data-reveal>
-          <header class="site-head">
-            <h3>Printables</h3>
-            <span class="mono">printables.com</span>
-          </header>
-          <ol class="site-steps">
-            <li><span class="guide-n mono">01</span> Open <b>printables.com</b> and tap the search bar. Type what you want: “dragon”, “vase”, “phone stand”.</li>
-            <li><span class="guide-n mono">02</span> Tap a model you like and look through its photos.</li>
-            <li><span class="guide-n mono">03</span> Tap the address bar (or Share → Copy link). Send that link to us.</li>
-          </ol>
-          <div class="browser" aria-hidden="true">
-            <div class="browser-bar">
-              <span class="dots"><i></i><i></i><i></i></span>
-              <span class="addr mono">printables.com/search/models?q=dragon <span class="pin mono">03</span></span>
-            </div>
-            <div class="searchbar mono"><svg class="ico-search" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.4"/><path d="M10.4 10.4 L14 14"/></svg> dragon<span class="pin mono">01</span></div>
-            <div class="results">
-              <figure class="result"><img src="assets/img/diagram/diagram-dragon-skull.webp" alt="" loading="lazy"><figcaption class="mono">DRAGON SKULL</figcaption></figure>
-              <figure class="result"><img src="assets/img/diagram/diagram-dragon-gold.webp" alt="" loading="lazy"><figcaption class="mono">DRAGON EGG</figcaption><span class="pin mono">02</span></figure>
-              <figure class="result"><img src="assets/img/diagram/diagram-dragon-egg.webp" alt="" loading="lazy"><figcaption class="mono">EGG FIDGET</figcaption></figure>
-              <figure class="result"><img src="assets/img/diagram/diagram-dragon-flexi.webp" alt="" loading="lazy"><figcaption class="mono">FLEXI DRAGON</figcaption></figure>
-            </div>
-          </div>
-        </article>
-
-        <article class="site-panel panel" data-reveal>
-          <header class="site-head">
-            <h3>Thingiverse</h3>
-            <span class="mono">thingiverse.com</span>
-          </header>
-          <ol class="site-steps">
-            <li><span class="guide-n mono">01</span> Open <b>thingiverse.com</b> and search. Try classics like “flexi rex” or “benchy”.</li>
-            <li><span class="guide-n mono">02</span> Open a model with photos you like. Check the license line if you're curious.</li>
-            <li><span class="guide-n mono">03</span> Copy the page link from the address bar. Don't bother downloading the files.</li>
-          </ol>
-          <div class="browser" aria-hidden="true">
-            <div class="browser-bar">
-              <span class="dots"><i></i><i></i><i></i></span>
-              <span class="addr mono">thingiverse.com/thing:6406682 <span class="pin mono">03</span></span>
-            </div>
-            <div class="searchbar mono"><svg class="ico-search" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.4"/><path d="M10.4 10.4 L14 14"/></svg> flexi rex<span class="pin mono">01</span></div>
-            <div class="results results-3">
-              <figure class="result"><img src="assets/img/diagram/diagram-benchy.webp" alt="" loading="lazy"><figcaption class="mono">3DBENCHY</figcaption></figure>
-              <figure class="result"><img src="assets/img/diagram/diagram-lizard.webp" alt="" loading="lazy"><figcaption class="mono">LIZARD DRAGON</figcaption><span class="pin mono">02</span></figure>
-              <figure class="result"><img src="assets/img/diagram/flexi-rex.webp" alt="" loading="lazy"><figcaption class="mono">FLEXI REX</figcaption></figure>
-            </div>
-          </div>
-        </article>
-
-        <article class="site-panel panel" data-reveal>
-          <header class="site-head">
-            <h3>MakerWorld</h3>
-            <span class="mono">makerworld.com</span>
-          </header>
-          <ol class="site-steps">
-            <li><span class="guide-n mono">01</span> Open <b>makerworld.com</b> and search the model library: dragons, decor, gadgets.</li>
-            <li><span class="guide-n mono">02</span> Open a model you like and check its photos and print profiles.</li>
-            <li><span class="guide-n mono">03</span> Copy the page link and send it to us on WhatsApp. Same as the others.</li>
-          </ol>
-          <div class="browser" aria-hidden="true">
-            <div class="browser-bar">
-              <span class="dots"><i></i><i></i><i></i></span>
-              <span class="addr mono">makerworld.com/en/search/models <span class="pin mono">03</span></span>
-            </div>
-            <div class="searchbar mono"><svg class="ico-search" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.4"/><path d="M10.4 10.4 L14 14"/></svg> dragon<span class="pin mono">01</span></div>
-            <div class="results results-list">
-              <div class="result-row"><span class="thumb-slot mono">3D</span><span class="row-name">Articulated Crystal Dragon <em class="mono">· Saber3D · 219k likes</em></span><span class="pin mono">02</span></div>
-              <div class="result-row"><span class="thumb-slot mono">3D</span><span class="row-name">Bamboo Dragon <em class="mono">· Cinderwing3D · 26.8k</em></span></div>
-              <div class="result-row"><span class="thumb-slot mono">3D</span><span class="row-name">Articulated Sky Dragon <em class="mono">· TsiTsi · 5.3k</em></span></div>
-            </div>
-          </div>
-        </article>
-
-        <article class="site-panel site-panel-send panel" data-reveal>
-          <header class="site-head">
-            <h3>Then: send it</h3>
-            <span class="mono">WhatsApp</span>
-          </header>
-          <ol class="site-steps">
-            <li><span class="guide-n mono">04</span> Paste the link into our WhatsApp and add your colour and city.</li>
-            <li><span class="guide-n mono">05</span> We reply with the exact weight and price. You approve, we print, it ships.</li>
-          </ol>
-          <div class="phone" aria-hidden="true">
-            <div class="phone-head">
-              <span class="avatar mono">L</span>
-              <span class="phone-title">Lumenera</span>
-              <span class="mono phone-sub">online</span>
-            </div>
-            <div class="chat-preview">
-              <div class="bubble-out">Hi Lumenera! Please print this model for me:<br>Articulated Bone Dragon<br>printables.com/model/538160…<br>Colour I want: black<br>My city: Lahore</div>
-              <span class="bubble-time mono"><svg class="ico-check" viewBox="0 0 18 12" aria-hidden="true"><path d="M1.5 6.5 L5.5 10 L11 2.5"/><path d="M7.5 8.5 L9 10 L16.5 1.5"/></svg>SEND IT</span>
-            </div>
-            <div class="phone-cta">
-              <a class="btn btn-wa btn-sm btn-block" href="https://wa.me/923487259122" data-wa="guide">Try it: open WhatsApp</a>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section section-plate" id="faq">
-    <div class="wrap wrap-narrow">
-      <h2 data-reveal>Questions people ask before their first print.</h2>
-      <div class="faq" data-reveal>
-        <details>
-          <summary>What file formats can you print?</summary>
-          <p>STL, 3MF or OBJ. Not sure what you have? Send it anyway. We'll tell you.</p>
-        </details>
-        <details>
-          <summary>I don't have a 3D model. Where do I find one?</summary>
-          <p>Any of the sites in the <a href="#guide">60-second guide</a> above. MakerWorld, Printables and Thingiverse have hundreds of thousands of free models. Find one you like and send us the page link.</p>
-        </details>
-        <details>
-          <summary>Do I need a 3D printer or any software?</summary>
-          <p>No. You only need WhatsApp. We handle slicing, printing, clean-up and shipping.</p>
-        </details>
-        <details>
-          <summary>How much will my print cost?</summary>
-          <p>15 Rs per gram of the finished print. We confirm the exact weight and price on WhatsApp before we start printing.</p>
-        </details>
-        <details>
-          <summary>How long does a print take?</summary>
-          <p>It depends on the size. Small things can be done fast, large ones take longer. We'll give you a realistic timeline when we see your model.</p>
-        </details>
-        <details>
-          <summary>What colours can I choose?</summary>
-          <p>PLA comes in lots of colours. Tell us your favourite and we'll let you know what's in stock.</p>
-        </details>
-        <details>
-          <summary>How do I pay?</summary>
-          <p>We share payment details on WhatsApp when you confirm your order.</p>
-        </details>
-        <details>
-          <summary>Where do you deliver, and what are the delivery charges?</summary>
-          <p>Anywhere in Pakistan by courier. We'll include the delivery charge for your city in your quote. (We only ship inside Pakistan for now.)</p>
-        </details>
-        <details>
-          <summary>Can you print large or technical parts?</summary>
-          <p>Usually, yes. Send the model and we'll check size, supports and strength, and tell you honestly if it will work.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section class="final">
-    <div class="wrap final-in">
-      <h2 data-reveal>Your next favourite thing is one message away.</h2>
-      <p class="lede invert" data-reveal>Send a link. Send a file. Or just say hi and tell us what you want made.</p>
-      <div class="cta-row center" data-reveal>
-        <a class="btn btn-wa btn-lg" href="https://wa.me/923487259122" data-wa="generic">
-          <svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.4 15.2L2.1 21.9l4.9-1.5A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.1 15.1l-.3-.2-2.9.9.9-2.8-.2-.3a8.1 8.1 0 0 1 6.6-12.7Zm-2.9 3.6c-.2 0-.5 0-.7.3-.2.3-.9.9-.9 2.1s.9 2.5 1 2.6c.1.2 1.7 2.7 4.2 3.7 2 .8 2.5.7 2.9.6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.5-.3c-.3-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.2.2-.3.2-.6.1a6.7 6.7 0 0 1-2-1.2 7.4 7.4 0 0 1-1.4-1.7c-.1-.2 0-.4.1-.5l.5-.6c.1-.2.2-.3.3-.5v-.5c0-.2-.6-1.4-.8-1.9-.2-.4-.4-.4-.6-.4h-.1Z"/></svg>
-          Message Lumenera now
-        </a>
-      </div>
-      <div class="contact-rows" data-reveal>
-        <a class="mono contact-row" href="https://wa.me/923487259122" data-wa="generic">WHATSAPP · +92 348 7259122</a>
-        <a class="mono contact-row" href="mailto:lumeneraaccessories@gmail.com">EMAIL · LUMENERAACCESSORIES@GMAIL.COM</a>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="footer">
-  <div class="wrap footer-in">
-    <div class="footer-brand">
-      <img src="assets/logo.png" alt="" width="28" height="28">
-      <span>Lumenera · PLA 3D printing service, Pakistan</span>
-    </div>
-    <p class="mono footer-meta">15 RS / GRAM · SHIPS ACROSS PAKISTAN · <a href="credits.html">PHOTO CREDITS</a></p>
-    <p class="mono footer-meta">© 2026 LUMENERA</p>
+ <section class="hero wrap" aria-labelledby="hero-title">
+  <div class="hero-copy">
+   <h1 id="hero-title">Little things.<br><em>Made just<br class="desktop-break"> for you.</em></h1>
+   <p class="hero-intro">A gift with personality. A happier desk. Something just because.</p>
+   <p class="hero-explain">Pick a model or send your own. We 3D print it in PLA and deliver it anywhere in Pakistan.</p>
+   <a class="text-link explore-link" href="#models">Find your little thing <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+   <div class="hero-facts"><span><strong>Rs 15</strong> / gram</span><span class="fact-divider" aria-hidden="true"></span><span>Delivered across<br><strong>Pakistan</strong></span></div>
   </div>
-</footer>
-
-<script src="script.js"></script>
+  <div class="hero-display">
+   <div class="hero-shelf"><article class="feature feature--lead" data-model-id="2619796"><div class="feature-media"><picture><source type="image/avif" srcset="assets/models/cat-keychain-400.avif 400w, assets/models/cat-keychain-800.avif 800w" sizes="(max-width:700px) calc(100vw - 40px),360px"><img src="assets/models/cat-keychain-800.webp" srcset="assets/models/cat-keychain-400.webp 400w, assets/models/cat-keychain-800.webp 800w" sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 35vw, 360px" width="800" height="600" alt="Pink and black cat-shaped 3D printed keychains on a dish" loading="eager" fetchpriority="high" decoding="sync"></picture><span class="image-fallback" hidden>Image unavailable<br><a href="https://makerworld.com/en/models/2619796-cute-cat-keychain" target="_blank" rel="noopener noreferrer">See the original model <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></span><span class="image-label">Example photo</span></div><div class="feature-info"><h2>Cute Cat Keychain</h2><span>Gifts &amp; Wearables</span></div><a class="print-link" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I'd%20like%20to%20order%3A%20Cute%20Cat%20Keychain.%0AModel%3A%20https%3A%2F%2Fmakerworld.com%2Fen%2Fmodels%2F2619796-cute-cat-keychain%0APlease%20confirm%20the%20print%20price%2C%20available%20colours%20and%20delivery.%0AMy%20city%3A%20" target="_blank" rel="noopener noreferrer" aria-label="Get this printed: Cute Cat Keychain — opens WhatsApp">Get this printed <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></article><article class="feature feature--small" data-model-id="1976503"><div class="feature-media"><img src="assets/models/phone-stand-800.webp" srcset="assets/models/phone-stand-400.webp 400w, assets/models/phone-stand-800.webp 800w" sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 35vw, 360px" width="800" height="599" alt="Black 3D printed phone stand holding a smartphone on a desk" loading="eager"  decoding="async"><span class="image-fallback" hidden>Image unavailable<br><a href="https://makerworld.com/en/models/1976503-the-best-phone-stand" target="_blank" rel="noopener noreferrer">See the original model <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></span><span class="image-label">Example photo</span></div><div class="feature-info"><h2>Phone Stand</h2><span>Desk &amp; Tech</span></div><a class="print-link" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I'd%20like%20to%20order%3A%20THE%20BEST%20PHONE%20STAND.%0AModel%3A%20https%3A%2F%2Fmakerworld.com%2Fen%2Fmodels%2F1976503-the-best-phone-stand%0APlease%20confirm%20the%20print%20price%2C%20available%20colours%20and%20delivery.%0AMy%20city%3A%20" target="_blank" rel="noopener noreferrer" aria-label="Get this printed: Phone Stand — opens WhatsApp">Get this printed <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></article><article class="feature feature--small" data-model-id="2084224"><div class="feature-media"><img src="assets/models/mini-planter-800.webp" srcset="assets/models/mini-planter-400.webp 400w, assets/models/mini-planter-800.webp 800w" sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 35vw, 360px" width="800" height="600" alt="Spiral 3D printed mini planters in white and black holding succulents" loading="eager"  decoding="async"><span class="image-fallback" hidden>Image unavailable<br><a href="https://makerworld.com/en/models/2084224-mini-planter" target="_blank" rel="noopener noreferrer">See the original model <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></span><span class="image-label">Example photo</span></div><div class="feature-info"><h2>Mini Planter</h2><span>Decor &amp; Plants</span></div><a class="print-link" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I'd%20like%20to%20order%3A%20Mini%20Planter.%0AModel%3A%20https%3A%2F%2Fmakerworld.com%2Fen%2Fmodels%2F2084224-mini-planter%0APlease%20confirm%20the%20print%20price%2C%20available%20colours%20and%20delivery.%0AMy%20city%3A%20" target="_blank" rel="noopener noreferrer" aria-label="Get this printed: Mini Planter — opens WhatsApp">Get this printed <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></article></div>
+   <p class="example-note">Community examples. Made by their creators, chosen for inspiration.<br>Your colour, size and final quote are confirmed on WhatsApp.</p>
+  </div>
+ </section>
+ <div class="promise-strip"><div class="wrap promise-inner"><p>You find it.<span aria-hidden="true"> / </span>We print it.<span aria-hidden="true"> / </span>You make it yours.</p><a href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I&#39;d%20like%20to%20print%20my%20own%20model.%20I&#39;ll%20send%20the%20link%20or%20file%20here.%20Please%20confirm%20the%20print%20price%2C%20colours%20and%20delivery." target="_blank" rel="noopener noreferrer">Already have a model? Send it <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
+ <section class="collection wrap section-space" id="models" aria-labelledby="collection-title">
+  <div class="section-heading"><h2 id="collection-title">Meet your next<br><em>little favourite.</em></h2><div><p>Useful, playful, a little unexpected.<br> Pick something you’d like us to make.</p><p class="collection-price">Every print: Rs 15 / gram. Exact quote in chat.</p></div></div>
+  <div class="collection-tools"><div class="filters" aria-label="Filter the collection" hidden><button type="button" class="filter is-active" data-filter="all" aria-pressed="true">All objects <span>12</span></button><button type="button" class="filter" data-filter="gifts" aria-pressed="false">Gifts &amp; Wearables <span>2</span></button><button type="button" class="filter" data-filter="desk" aria-pressed="false">Desk &amp; Tech <span>3</span></button><button type="button" class="filter" data-filter="home" aria-pressed="false">Home &amp; Everyday <span>4</span></button><button type="button" class="filter" data-filter="decor" aria-pressed="false">Decor &amp; Plants <span>3</span></button></div><p class="result-count" id="result-count" aria-live="polite" aria-atomic="true">12 objects to make your own</p></div>
+  <div class="model-grid"><article class="model-card" data-category="gifts" data-model-id="2619796"><div class="card-media"><img src="assets/models/cat-keychain-800.webp" srcset="assets/models/cat-keychain-400.webp 400w, assets/models/cat-keychain-800.webp 800w" sizes="(max-width: 359px) calc(100vw - 40px), (max-width: 700px) calc((100vw - 54px) / 2), (max-width: 1000px) 30vw, 290px" width="800" height="600" alt="Pink and black cat-shaped 3D printed keychains on a dish" loading="lazy"  decoding="async"><span class="image-fallback" hidden>Image unavailable<br><a href="https://makerworld.com/en/models/2619796-cute-cat-keychain" target="_blank" rel="noopener noreferrer">See the original model <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></span><span class="image-label">Example photo</span></div><div class="card-body"><span class="card-category">Gifts &amp; Wearables</span><h3>Cute Cat Keychain</h3><p>A little kitten to take everywhere. Or give to someone you love.</p><a class="card-order" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I'd%20like%20to%20order%3A%20Cute%20Cat%20Keychain.%0AModel%3A%20https%3A%2F%2Fmakerworld.com%2Fen%2Fmodels%2F2619796-cute-cat-keychain%0APlease%20confirm%20the%20print%20price%2C%20available%20colours%20and%20delivery.%0AMy%20city%3A%20" target="_blank" rel="noopener noreferrer" aria-label="Get this printed: Cute Cat Keychain — opens WhatsApp">Get this printed <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="creator-link" href="credits.html#model-2619796">Design / image: CLOREN</a></div></article><article class="model-card" data-category="desk" data-model-id="1976503"><div class="card-media"><img src="assets/models/phone-stand-800.webp" srcset="assets/models/phone-stand-400.webp 400w, assets/models/phone-stand-800.webp 800w" sizes="(max-width: 359px) calc(100vw - 40px), (max-width: 700px) calc((100vw - 54px) / 2), (max-width: 1000px) 30vw, 290px" width="800" height="599" alt="Black 3D printed phone stand holding a smartphone on a desk" loading="lazy"  decoding="async"><span class="image-fallback" hidden>Image unavailable<br><a href="https://makerworld.com/en/models/1976503-the-best-phone-stand" target="_blank" rel="noopener noreferrer">See the original model <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></span><span class="image-label">Example photo</span></div><div class="card-body"><span class="card-category">Desk &amp; Tech</span><h3>Phone Stand</h3><p>Keep your phone upright for calls, videos and recipes.</p><a class="card-order" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I'd%20like%20to%20order%3A%20THE%20BEST%20PHONE%20STAND.%0AModel%3A%20https%3A%2F%2Fmakerworld.com%2Fen%2Fmodels%2F1976503-the-best-phone-stand%0APlease%20confirm%20the%20print%20price%2C%20available%20colours%20and%20delivery.%0AMy%20city%3A%20" target="_blank" rel="noopener noreferrer" aria-label="Get this printed: Phone Stand — opens WhatsApp">Get this printed <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="creator-link" href="credits.html#model-1976503">Design / image: SHELDER</a></div></article><article class="model-card" data-category="decor" data-model-id="2084224"><div class="card-media"><img src="assets/models/mini-planter-800.webp" srcset="assets/models/mini-planter-400.webp 400w, assets/models/mini-planter-800.webp 800w" sizes="(max-width: 359px) calc(100vw - 40px), (max-width: 700px) calc((100vw - 54px) / 2), (max-width: 1000px) 30vw, 290px" width="800" height="600" alt="Spiral 3D printed mini planters in white and black holding succulents" loading="lazy"  decoding="async"><span class="image-fallback" hidden>Image unavailable<br><a href="https://makerworld.com/en/models/2084224-mini-planter" target="_blank" rel="noopener noreferrer">See the original model <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></span><span class="image-label">Example photo</span></div><div class="card-body"><span class="card-category">Decor &amp; Plants</span><h3>Mini Planter</h3><p>A spiral-shaped home for a small plant.</p><a class="card-order" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I'd%20like%20to%20order%3A%20Mini%20Planter.%0AModel%3A%20https%3A%2F%2Fmakerworld.com%2Fen%2Fmodels%2F2084224-mini-planter%0APlease%20confirm%20the%20print%20price%2C%20available%20colours%20and%20delivery.%0AMy%20city%3A%20" target="_blank" rel="noopener noreferrer" aria-label="Get this printed: Mini Planter — opens WhatsApp">Get this printed <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="creator-link" href="credits.html#model-2084224">Design / image: DOT DESIGN</a></div></article><article class="model-card" data-category="decor" data-model-id="3380360"><div class="card-media"><img src="assets/models/ghost-pumpkin-800.webp" srcset="assets/models/ghost-pumpkin-400.webp 400w, assets/models/ghost-pumpkin-800.webp 800w" sizes="(max-width: 359px) calc(100vw - 40px), (max-width: 700px) calc((100vw - 54px) / 2), (max-width: 1000px) 30vw, 290px" width="800" height="600" alt="White knitted-style ghost sitting in an orange 3D printed pumpkin" loading="lazy"  decoding="async"><span class="image-fallback" hidden>Image unavailable<br><a href="https://makerworld.com/en/models/3380360-knitted-ghost-in-pumpkin-halloween" target="_blank" rel="noopener noreferrer">See the original model <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></span><span class="image-label">Example photo</span></div><div class="card-body"><span class="card-category">Decor &amp; Plants</span><h3>Knitted Ghost in a Pumpkin</h3><p>A knitted-look ghost tucked into a pumpkin. A playful shelf companion.</p><a class="card-order" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I'd%20like%20to%20order%3A%20Knitted%20Ghost%20in%20Pumpkin%20-%20Halloween.%0AModel%3A%20https%3A%2F%2Fmakerworld.com%2Fen%2Fmodels%2F3380360-knitted-ghost-in-pumpkin-halloween%0APlease%20confirm%20the%20print%20price%2C%20available%20colours%20and%20delivery.%0AMy%20city%3A%20" target="_blank" rel="noopener noreferrer" aria-label="Get this printed: Knitted Ghost in a Pumpkin — opens WhatsApp">Get this printed <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="creator-link" href="credits.html#model-3380360">Design / image: SMOGGY3D</a></div></article><article class="model-card" data-category="decor" data-model-id="1080631"><div class="card-media"><img src="assets/models/nature-mountains-800.webp" srcset="assets/models/nature-mountains-400.webp 400w, assets/models/nature-mountains-800.webp 800w" sizes="(max-width: 359px) calc(100vw - 40px), (max-width: 700px) calc((100vw - 54px) / 2), (max-width: 1000px) 30vw, 290px" width="800" height="600" alt="Layered black mountain range decor piece with pine trees and a lake" loading="lazy"  decoding="async"><span class="image-fallback" hidden>Image unavailable<br><a href="https://makerworld.com/en/models/1080631-nature-mountains" target="_blank" rel="noopener noreferrer">See the original model <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></span><span class="image-label">Example photo</span></div><div class="card-body"><span class="card-category">Decor &amp; Plants</span><h3>Nature Mountains</h3><p>A little mountain landscape for a shelf or desk.</p><a class="card-order" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I'd%20like%20to%20order%3A%20Nature%20Mountains.%0AModel%3A%20https%3A%2F%2Fmakerworld.com%2Fen%2Fmodels%2F1080631-nature-mountains%0APlease%20confirm%20the%20print%20price%2C%20available%20colours%20and%20delivery.%0AMy%20city%3A%20" target="_blank" rel="noopener noreferrer" aria-label="Get this printed: Nature Mountains — opens WhatsApp">Get this printed <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="creator-link" href="credits.html#model-1080631">Design / image: RAFFNIX3D</a></div></article><article class="model-card" data-category="gifts" data-model-id="2819040"><div class="card-media"><img src="assets/models/bracelet-800.webp" srcset="assets/models/bracelet-400.webp 400w, assets/models/bracelet-800.webp 800w" sizes="(max-width: 359px) calc(100vw - 40px), (max-width: 700px) calc((100vw - 54px) / 2), (max-width: 1000px) 30vw, 290px" width="800" height="600" alt="Red woven Arrowave bracelet 3D printed in one piece" loading="lazy"  decoding="async"><span class="image-fallback" hidden>Image unavailable<br><a href="https://makerworld.com/en/models/2819040-arrowave-bracelet-only-3g-of-filament" target="_blank" rel="noopener noreferrer">See the original model <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></span><span class="image-label">Example photo</span></div><div class="card-body"><span class="card-category">Gifts &amp; Wearables</span><h3>Arrowave Bracelet</h3><p>An airy woven pattern to wear your way.</p><a class="card-order" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I'd%20like%20to%20order%3A%20Arrowave%20Bracelet%20(Only%203g%20of%20filament).%0AModel%3A%20https%3A%2F%2Fmakerworld.com%2Fen%2Fmodels%2F2819040-arrowave-bracelet-only-3g-of-filament%0APlease%20confirm%20the%20print%20price%2C%20available%20colours%20and%20delivery.%0AMy%20city%3A%20" target="_blank" rel="noopener noreferrer" aria-label="Get this printed: Arrowave Bracelet — opens WhatsApp">Get this printed <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="creator-link" href="credits.html#model-2819040">Design / image: MRPRINT3D</a></div></article><article class="model-card" data-category="desk" data-model-id="3282467"><div class="card-media"><img src="assets/models/pen-holder-800.webp" srcset="assets/models/pen-holder-400.webp 400w, assets/models/pen-holder-800.webp 800w" sizes="(max-width: 359px) calc(100vw - 40px), (max-width: 700px) calc((100vw - 54px) / 2), (max-width: 1000px) 30vw, 290px" width="800" height="599" alt="Pink desk pen holder lettered with the name Amelia holding pens" loading="lazy"  decoding="async"><span class="image-fallback" hidden>Image unavailable<br><a href="https://makerworld.com/en/models/3282467-custom-name-pen-holder-personalized-desk-organizer" target="_blank" rel="noopener noreferrer">See the original model <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></span><span class="image-label">Example photo</span></div><div class="card-body"><span class="card-category">Desk &amp; Tech</span><h3>Custom Name Pen Holder</h3><p>Your name, your desk. A personalised home for your pens.</p><a class="card-order" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I'd%20like%20to%20order%3A%20Custom%20Name%20Pen%20Holder%20Personalized%20Desk%20Organizer.%0AModel%3A%20https%3A%2F%2Fmakerworld.com%2Fen%2Fmodels%2F3282467-custom-name-pen-holder-personalized-desk-organizer%0APlease%20confirm%20the%20print%20price%2C%20available%20colours%20and%20delivery.%0AMy%20city%3A%20" target="_blank" rel="noopener noreferrer" aria-label="Get this printed: Custom Name Pen Holder — opens WhatsApp">Get this printed <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="creator-link" href="credits.html#model-3282467">Design / image: GREEDYDOG</a></div></article><article class="model-card" data-category="desk" data-model-id="3312785"><div class="card-media is-contained"><img src="assets/models/headphone-hook-800.webp" srcset="assets/models/headphone-hook-400.webp 400w, assets/models/headphone-hook-800.webp 800w" sizes="(max-width: 359px) calc(100vw - 40px), (max-width: 700px) calc((100vw - 54px) / 2), (max-width: 1000px) 30vw, 290px" width="800" height="600" alt="Wood-look 3D printed hook holding black headphones under a desk" loading="lazy"  decoding="async"><span class="image-fallback" hidden>Image unavailable<br><a href="https://makerworld.com/en/models/3312785-universal-headphone-hook-headphone-hanger-holder" target="_blank" rel="noopener noreferrer">See the original model <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></span><span class="image-label">Example photo</span></div><div class="card-body"><span class="card-category">Desk &amp; Tech</span><h3>Universal Headphone Hook</h3><p>Give your headphones a spot under the desk.</p><a class="card-order" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I'd%20like%20to%20order%3A%20Universal%20Headphone%20Hook%20%7C%20Headphone%20Hanger%2FHolder.%0AModel%3A%20https%3A%2F%2Fmakerworld.com%2Fen%2Fmodels%2F3312785-universal-headphone-hook-headphone-hanger-holder%0APlease%20confirm%20the%20print%20price%2C%20available%20colours%20and%20delivery.%0AMy%20city%3A%20" target="_blank" rel="noopener noreferrer" aria-label="Get this printed: Universal Headphone Hook — opens WhatsApp">Get this printed <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="creator-link" href="credits.html#model-3312785">Design / image: YEKTA</a></div></article><article class="model-card" data-category="home" data-model-id="1496368"><div class="card-media"><img src="assets/models/cat-bowl-800.webp" srcset="assets/models/cat-bowl-400.webp 400w, assets/models/cat-bowl-800.webp 800w" sizes="(max-width: 359px) calc(100vw - 40px), (max-width: 700px) calc((100vw - 54px) / 2), (max-width: 1000px) 30vw, 290px" width="800" height="600" alt="White 3D printed bowl shaped like a sleeping curled-up cat" loading="lazy"  decoding="async"><span class="image-fallback" hidden>Image unavailable<br><a href="https://makerworld.com/en/models/1496368-cute-sleeping-cat-bowl" target="_blank" rel="noopener noreferrer">See the original model <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></span><span class="image-label">Example photo</span></div><div class="card-body"><span class="card-category">Home &amp; Everyday</span><h3>Cute Sleeping Cat Bowl</h3><p>A sleeping cat to hold your keys and little desk things.</p><a class="card-order" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I'd%20like%20to%20order%3A%20Cute%20Sleeping%20Cat%20Bowl.%0AModel%3A%20https%3A%2F%2Fmakerworld.com%2Fen%2Fmodels%2F1496368-cute-sleeping-cat-bowl%0APlease%20confirm%20the%20print%20price%2C%20available%20colours%20and%20delivery.%0AMy%20city%3A%20" target="_blank" rel="noopener noreferrer" aria-label="Get this printed: Cute Sleeping Cat Bowl — opens WhatsApp">Get this printed <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="creator-link" href="credits.html#model-1496368">Design / image: HUMILAK</a></div></article><article class="model-card" data-category="home" data-model-id="3378335"><div class="card-media is-contained"><img src="assets/models/wall-hook-800.webp" srcset="assets/models/wall-hook-400.webp 400w, assets/models/wall-hook-800.webp 800w" sizes="(max-width: 359px) calc(100vw - 40px), (max-width: 700px) calc((100vw - 54px) / 2), (max-width: 1000px) 30vw, 290px" width="800" height="600" alt="Three 3D printed wall hooks mounted in a row holding a bag and towel" loading="lazy"  decoding="async"><span class="image-fallback" hidden>Image unavailable<br><a href="https://makerworld.com/en/models/3378335-wall-hook-v2-coat-hanger-towel-rack" target="_blank" rel="noopener noreferrer">See the original model <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></span><span class="image-label">Example photo</span></div><div class="card-body"><span class="card-category">Home &amp; Everyday</span><h3>Wall Hook v2</h3><p>Make a spot for your coat, towel or bag.</p><a class="card-order" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I'd%20like%20to%20order%3A%20Wall%20Hook%20v2%20%7C%20Coat%20Hanger%20%7C%20Towel%20Rack.%0AModel%3A%20https%3A%2F%2Fmakerworld.com%2Fen%2Fmodels%2F3378335-wall-hook-v2-coat-hanger-towel-rack%0APlease%20confirm%20the%20print%20price%2C%20available%20colours%20and%20delivery.%0AMy%20city%3A%20" target="_blank" rel="noopener noreferrer" aria-label="Get this printed: Wall Hook v2 — opens WhatsApp">Get this printed <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="creator-link" href="credits.html#model-3378335">Design / image: YEKTA</a></div></article><article class="model-card" data-category="home" data-model-id="2983228"><div class="card-media"><img src="assets/models/grocery-carrier-800.webp" srcset="assets/models/grocery-carrier-400.webp 400w, assets/models/grocery-carrier-800.webp 800w" sizes="(max-width: 359px) calc(100vw - 40px), (max-width: 700px) calc((100vw - 54px) / 2), (max-width: 1000px) 30vw, 290px" width="800" height="600" alt="Hand carrying grocery bags with a blue ergonomic 3D printed handle" loading="lazy"  decoding="async"><span class="image-fallback" hidden>Image unavailable<br><a href="https://makerworld.com/en/models/2983228-effortless-shopping-ergonomic-grocery-bag-carrier" target="_blank" rel="noopener noreferrer">See the original model <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></span><span class="image-label">Example photo</span></div><div class="card-body"><span class="card-category">Home &amp; Everyday</span><h3>Grocery Bag Carrier</h3><p>A rounded handle to carry several shopping bags together.</p><a class="card-order" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I'd%20like%20to%20order%3A%20Effortless%20Shopping%20-%20Ergonomic%20Grocery%20Bag%20Carrier.%0AModel%3A%20https%3A%2F%2Fmakerworld.com%2Fen%2Fmodels%2F2983228-effortless-shopping-ergonomic-grocery-bag-carrier%0APlease%20confirm%20the%20print%20price%2C%20available%20colours%20and%20delivery.%0AMy%20city%3A%20" target="_blank" rel="noopener noreferrer" aria-label="Get this printed: Grocery Bag Carrier — opens WhatsApp">Get this printed <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="creator-link" href="credits.html#model-2983228">Design / image: LORENZ 3D</a></div></article><article class="model-card" data-category="home" data-model-id="3388075"><div class="card-media is-contained"><img src="assets/models/box-opener-800.webp" srcset="assets/models/box-opener-400.webp 400w, assets/models/box-opener-800.webp 800w" sizes="(max-width: 359px) calc(100vw - 40px), (max-width: 700px) calc((100vw - 54px) / 2), (max-width: 1000px) 30vw, 290px" width="800" height="600" alt="Small blue 3D printed box opener with a rounded grip" loading="lazy"  decoding="async"><span class="image-fallback" hidden>Image unavailable<br><a href="https://makerworld.com/en/models/3388075-ultra-light-box-opener-only-3-5-g" target="_blank" rel="noopener noreferrer">See the original model <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></span><span class="image-label">Example photo</span></div><div class="card-body"><span class="card-category">Home &amp; Everyday</span><h3>Ultra Light Box Opener</h3><p>A small tool for opening your everyday parcels.</p><a class="card-order" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I'd%20like%20to%20order%3A%20Ultra%20Light%20Box%20Opener%20%E2%80%93%20Only%203.5%20g.%0AModel%3A%20https%3A%2F%2Fmakerworld.com%2Fen%2Fmodels%2F3388075-ultra-light-box-opener-only-3-5-g%0APlease%20confirm%20the%20print%20price%2C%20available%20colours%20and%20delivery.%0AMy%20city%3A%20" target="_blank" rel="noopener noreferrer" aria-label="Get this printed: Ultra Light Box Opener — opens WhatsApp">Get this printed <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="creator-link" href="credits.html#model-3388075">Design / image: LP CREATIONS | 3D DESIGN</a></div></article></div>
+  <div class="empty-state" hidden><h3>No objects in this collection yet.</h3><p>Explore all objects, or tell us what you’d like to make.</p><button class="button button--dark reset-filters" type="button">Show all objects <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+  <p class="collection-note">Example images from model creators, not Lumenera’s own prints. Plants, cables, headphones and other accessories are not included. <a href="credits.html">Sources & image credits <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+ </section>
+ <section class="pricing" id="pricing" aria-labelledby="price-title"><div class="wrap pricing-layout">
+  <div class="pricing-copy"><h2 id="price-title">Small things.<br><em>Clear pricing.</em></h2><p>The price of your finished print is its weight × <strong>Rs 15 per gram.</strong> That’s the starting point. We confirm the print price and delivery charge before you approve.</p><a class="button button--wa" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I&#39;d%20like%20to%20get%20something%203D%20printed.%20Please%20help%20me%20choose%20a%20model%20and%20confirm%20the%20print%20price%2C%20colours%20and%20delivery." target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.7 7.4L3 20.5l1.4-4.7A8.5 8.5 0 1 1 20.5 11.7Z" stroke="currentColor" stroke-width="1.65" stroke-linejoin="round"/><path d="M8.2 7.5c.3-.2.7-.1.9.2l1 1.7c.2.3.1.6-.1.8l-.6.7a6.8 6.8 0 0 0 3.5 3.3l.7-.8c.2-.2.5-.3.8-.1l1.8.9c.3.2.4.5.2.8-.5 1-1.3 1.5-2.4 1.2-3.4-1-5.8-3.4-6.7-6.7-.3-1 .1-1.6.9-2Z" fill="currentColor"/></svg> Get my print quote <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+  <div class="price-sheet"><p class="price-sheet-title">A little sense of the price</p><div class="price-row"><span>10 grams</span><strong>Rs 150</strong></div><div class="price-row"><span>50 grams</span><strong>Rs 750</strong></div><div class="price-row"><span>100 grams</span><strong>Rs 1,500</strong></div><p class="price-footnote">Illustrative weights, not prices for the pictured objects. Your model’s size and print settings affect its weight. Courier charges are quoted separately.</p></div>
+ </div></section>
+ <section class="how wrap section-space" id="how" aria-labelledby="how-title">
+  <div class="section-heading"><h2 id="how-title">From “I want that”<br><em>to your doorstep.</em></h2><p>One conversation. Three simple steps.<br>No account or special software needed.</p></div>
+  <ol class="steps"><li><span class="step-number" aria-hidden="true">1</span><h3>Choose your thing</h3><p>Tap “Get this printed”, send a model link, or attach your STL, 3MF or OBJ file in WhatsApp.</p></li><li><span class="step-number" aria-hidden="true">2</span><h3>Make it yours</h3><p>We check the model and discuss size, available colours, print price, delivery and timing. You approve the quote.</p></li><li><span class="step-number" aria-hidden="true">3</span><h3>We print. You enjoy.</h3><p>Once the details are agreed, we make your print in PLA and arrange courier delivery across Pakistan.</p></li></ol>
+  <div class="how-cta"><a class="text-link" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I&#39;d%20like%20to%20get%20something%203D%20printed.%20Please%20help%20me%20choose%20a%20model%20and%20confirm%20the%20print%20price%2C%20colours%20and%20delivery." target="_blank" rel="noopener noreferrer">Let’s make something <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span>We confirm the details before printing.</span></div>
+ </section>
+ <section class="own-model wrap" id="send" aria-labelledby="own-title"><div><h2 id="own-title">Your idea.<br><em>Our next print.</em></h2><p>Found something elsewhere? Send us the link.<br> Already have a file? Attach it in WhatsApp.</p></div><div class="own-action"><form id="model-form" hidden novalidate><label for="model-link">Your model link <span>(optional)</span></label><input id="model-link" name="model-link" type="url" inputmode="url" autocomplete="url" placeholder="Paste a MakerWorld, Printables or other link" maxlength="1800" aria-describedby="link-help link-error"><p id="link-help" class="input-help">No link yet? Leave it blank and tell us your idea in chat.</p><p id="link-error" class="input-error" role="alert" hidden></p><button class="button button--wa" type="submit"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.7 7.4L3 20.5l1.4-4.7A8.5 8.5 0 1 1 20.5 11.7Z" stroke="currentColor" stroke-width="1.65" stroke-linejoin="round"/><path d="M8.2 7.5c.3-.2.7-.1.9.2l1 1.7c.2.3.1.6-.1.8l-.6.7a6.8 6.8 0 0 0 3.5 3.3l.7-.8c.2-.2.5-.3.8-.1l1.8.9c.3.2.4.5.2.8-.5 1-1.3 1.5-2.4 1.2-3.4-1-5.8-3.4-6.7-6.7-.3-1 .1-1.6.9-2Z" fill="currentColor"/></svg> Send my idea on WhatsApp <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button></form><a id="own-fallback" class="button button--wa" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I&#39;d%20like%20to%20print%20my%20own%20model.%20I&#39;ll%20send%20the%20link%20or%20file%20here.%20Please%20confirm%20the%20print%20price%2C%20colours%20and%20delivery." target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.7 7.4L3 20.5l1.4-4.7A8.5 8.5 0 1 1 20.5 11.7Z" stroke="currentColor" stroke-width="1.65" stroke-linejoin="round"/><path d="M8.2 7.5c.3-.2.7-.1.9.2l1 1.7c.2.3.1.6-.1.8l-.6.7a6.8 6.8 0 0 0 3.5 3.3l.7-.8c.2-.2.5-.3.8-.1l1.8.9c.3.2.4.5.2.8-.5 1-1.3 1.5-2.4 1.2-3.4-1-5.8-3.4-6.7-6.7-.3-1 .1-1.6.9-2Z" fill="currentColor"/></svg> Send my idea on WhatsApp <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><p class="own-footnote">We check print suitability and model permissions before confirming your order.</p></div></section>
+ <section class="help wrap section-space" aria-labelledby="help-title"><div class="help-intro"><h2 id="help-title">A few things<br><em>you might wonder.</em></h2><p>New to 3D printing? You don’t need to know the technical stuff. A model link is enough to start.</p><a class="text-link" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I&#39;d%20like%20to%20get%20something%203D%20printed.%20Please%20help%20me%20choose%20a%20model%20and%20confirm%20the%20print%20price%2C%20colours%20and%20delivery." target="_blank" rel="noopener noreferrer">Ask us on WhatsApp <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="help-list">
+  <details class="model-guide"><summary>I don’t have a model. How do I find one?<span class="plus" aria-hidden="true"></span></summary><div class="details-content"><p>Try <a href="https://www.printables.com/" target="_blank" rel="noopener noreferrer">Printables</a>, <a href="https://makerworld.com/" target="_blank" rel="noopener noreferrer">MakerWorld</a> or <a href="https://www.thingiverse.com/" target="_blank" rel="noopener noreferrer">Thingiverse</a>. You don’t need to download the file.</p><ol class="guide-steps"><li><strong>Search for something you like.</strong><span>Try “vase”, “keychain” or “phone stand”.</span></li><li><strong>Open the model and look at its images.</strong><span>Pick the design you’d like us to check.</span></li><li><strong>Copy the page link and send it to us.</strong><span>We’ll check the licence and print suitability, then give you a quote.</span></li></ol><a class="text-link" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I&#39;d%20like%20to%20print%20my%20own%20model.%20I&#39;ll%20send%20the%20link%20or%20file%20here.%20Please%20confirm%20the%20print%20price%2C%20colours%20and%20delivery." target="_blank" rel="noopener noreferrer">Send the model you found <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></details>
+  <details><summary>How much does a print cost?<span class="plus" aria-hidden="true"></span></summary><div class="details-content"><p>Rs 15 per gram of the finished print. We confirm the model’s weight, print price and separate courier charge on WhatsApp before you approve. The pictured examples do not have fixed product prices.</p></div></details>
+  <details><summary>Can I choose a colour or a different size?<span class="plus" aria-hidden="true"></span></summary><div class="details-content"><p>Tell us what you have in mind. We’ll share available PLA colours and check whether your chosen size works for the model. Colours in example photos are inspiration, not a promise of stock or multi-colour printing.</p></div></details>
+  <details><summary>Where do you deliver, and how long does it take?<span class="plus" aria-hidden="true"></span></summary><div class="details-content"><p>We arrange courier delivery across Pakistan. Send your city and model so we can confirm the delivery charge and a realistic print and delivery timeline before you order.</p></div></details>
+  <details><summary>How do I pay?<span class="plus" aria-hidden="true"></span></summary><div class="details-content"><p>We confirm the payment method and details with you on WhatsApp when discussing your quote.</p></div></details>
+  <details><summary>What files and materials can you print?<span class="plus" aria-hidden="true"></span></summary><div class="details-content"><p>Send an STL, 3MF or OBJ file directly in WhatsApp, or just share a model page link. We currently print in PLA. For large, detailed or technical parts, send the intended size and use so we can check suitability first.</p></div></details>
+  <details><summary>Are these photos of your own prints?<span class="plus" aria-hidden="true"></span></summary><div class="details-content"><p>They’re examples from the model creators, including clearly labelled digital renders. They show the designs you can enquire about. Your finish and available colours are discussed in chat. <a href="credits.html">See every source and credit.</a></p></div></details>
+ </div></section>
+ <section class="closing" aria-labelledby="closing-title"><div class="wrap closing-inner"><div><h2 id="closing-title">Saw something<br><em>you love?</em></h2><p>Let’s make it a real little thing.</p></div><div><a class="button button--wa closing-button" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I&#39;d%20like%20to%20get%20something%203D%20printed.%20Please%20help%20me%20choose%20a%20model%20and%20confirm%20the%20print%20price%2C%20colours%20and%20delivery." target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.7 7.4L3 20.5l1.4-4.7A8.5 8.5 0 1 1 20.5 11.7Z" stroke="currentColor" stroke-width="1.65" stroke-linejoin="round"/><path d="M8.2 7.5c.3-.2.7-.1.9.2l1 1.7c.2.3.1.6-.1.8l-.6.7a6.8 6.8 0 0 0 3.5 3.3l.7-.8c.2-.2.5-.3.8-.1l1.8.9c.3.2.4.5.2.8-.5 1-1.3 1.5-2.4 1.2-3.4-1-5.8-3.4-6.7-6.7-.3-1 .1-1.6.9-2Z" fill="currentColor"/></svg> Let’s talk on WhatsApp <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><p class="closing-hint">Pick a model. Ask a question. Send an idea.</p></div></div></section>
+</main>
+<footer class="footer wrap"><div class="footer-top"><div><a class="brand" href="#top"><img src="assets/logo.png" alt="" width="36" height="36">Lumenera<span class="brand-dot" aria-hidden="true"></span></a><p>Little things, printed in PLA.<br>Made for you. Delivered across Pakistan.</p></div><div class="footer-contact"><a class="phone-link" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I&#39;d%20like%20to%20get%20something%203D%20printed.%20Please%20help%20me%20choose%20a%20model%20and%20confirm%20the%20print%20price%2C%20colours%20and%20delivery." target="_blank" rel="noopener noreferrer">+92 348 7259122</a><button type="button" id="copy-number" class="copy-button" hidden>Copy number</button><span id="copy-status" class="copy-status" role="status" aria-live="polite"></span><a href="mailto:lumeneraaccessories@gmail.com">lumeneraaccessories@gmail.com</a></div></div><div class="footer-bottom"><span>© 2026 Lumenera</span><span>Rs 15 / gram · PLA printing</span><a href="credits.html">Image & model credits <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></footer>
+<div class="mobile-order"><span>Something in mind?<small>Let’s make it yours.</small></span><a class="button button--wa" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I&#39;d%20like%20to%20get%20something%203D%20printed.%20Please%20help%20me%20choose%20a%20model%20and%20confirm%20the%20print%20price%2C%20colours%20and%20delivery." target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.7 7.4L3 20.5l1.4-4.7A8.5 8.5 0 1 1 20.5 11.7Z" stroke="currentColor" stroke-width="1.65" stroke-linejoin="round"/><path d="M8.2 7.5c.3-.2.7-.1.9.2l1 1.7c.2.3.1.6-.1.8l-.6.7a6.8 6.8 0 0 0 3.5 3.3l.7-.8c.2-.2.5-.3.8-.1l1.8.9c.3.2.4.5.2.8-.5 1-1.3 1.5-2.4 1.2-3.4-1-5.8-3.4-6.7-6.7-.3-1 .1-1.6.9-2Z" fill="currentColor"/></svg> WhatsApp us <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
 </body>
 </html>
