@@ -186,3 +186,24 @@ details[open] .plus::after{transform:rotate(0)}
 
 .card-media.is-contained{background:#e9e6df}
 .card-media.is-contained img{object-fit:contain}
+/* Little printer: one geometric scene, two responsive placements. */
+.printer-corner{position:fixed;right:max(24px,env(safe-area-inset-right));bottom:max(24px,env(safe-area-inset-bottom));z-index:4;width:168px;padding:0;background:transparent;border:0;opacity:0;visibility:hidden;pointer-events:none;contain:layout}
+.printer-corner.is-visible{opacity:1;visibility:visible;transition:opacity .12s var(--ease)}
+.printer-scene{display:block;width:100%;height:auto}
+.printer-controls{height:44px}
+.printer-dismiss{position:absolute;top:0;right:0;width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;padding:0;background:var(--white);color:var(--ink);pointer-events:auto}
+.printer-dismiss:hover{background:var(--sage);color:var(--ink)}
+.printer-dismiss:focus-visible{outline-offset:3px}
+.printer-mobile{display:none}
+@media(max-width:700px){
+ .printer-corner{display:none}
+ .mobile-order.has-printer{padding-top:8px;padding-bottom:calc(8px + env(safe-area-inset-bottom))}
+ .printer-mobile{display:flex;align-items:center;gap:8px;min-width:0}
+ .printer-mobile .printer-scene{width:72px;height:48px;flex-shrink:0}
+ .printer-mobile-caption{font-size:10px;font-weight:600;line-height:1.5;white-space:nowrap}
+ .mobile-order.has-printer .button{flex-shrink:0}
+ .footer{padding-bottom:calc(100px + env(safe-area-inset-bottom))}
+ .feature--lead .feature-media{height:max(184px,calc(218px - env(safe-area-inset-bottom)))}
+}
+@media(max-width:359px){.printer-mobile-caption{display:none}.feature--lead .feature-media{height:max(166px,calc(200px - env(safe-area-inset-bottom)))}}
+@media(prefers-reduced-motion:reduce){.printer-corner.is-visible{transition:none}}

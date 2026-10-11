@@ -23,6 +23,7 @@
  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Lumenera PLA 3D printing","serviceType":"PLA 3D printing","areaServed":{"@type":"Country","name":"Pakistan"},"provider":{"@type":"Organization","name":"Lumenera","url":"https://transposemat.github.io/lumenera/","telephone":"+92 348 7259122","email":"lumeneraaccessories@gmail.com","logo":"https://transposemat.github.io/lumenera/assets/logo.png"},"description":"PLA 3D printing at Rs 15 per gram of finished print. Final print price and courier charges confirmed on WhatsApp before approval."}</script>
  <script id="business-config" type="application/json">{"name":"Lumenera","whatsapp":"923487259122","phone":"+92 348 7259122","email":"lumeneraaccessories@gmail.com","rate":15,"currency":"PKR","material":"PLA","area":"Pakistan","canonical":"https://transposemat.github.io/lumenera/"}</script>
  <script src="script.js" defer></script>
+ <script src="printer.js" defer></script>
 </head>
 <body>
 <!-- THESIS: A personal object studio: want the thing, tap the thing, have it made.
@@ -81,6 +82,76 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
  <section class="closing" aria-labelledby="closing-title"><div class="wrap closing-inner"><div><h2 id="closing-title">Saw something<br><em>you love?</em></h2><p>Let’s make it a real little thing.</p></div><div><a class="button button--wa closing-button" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I&#39;d%20like%20to%20get%20something%203D%20printed.%20Please%20help%20me%20choose%20a%20model%20and%20confirm%20the%20print%20price%2C%20colours%20and%20delivery." target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.7 7.4L3 20.5l1.4-4.7A8.5 8.5 0 1 1 20.5 11.7Z" stroke="currentColor" stroke-width="1.65" stroke-linejoin="round"/><path d="M8.2 7.5c.3-.2.7-.1.9.2l1 1.7c.2.3.1.6-.1.8l-.6.7a6.8 6.8 0 0 0 3.5 3.3l.7-.8c.2-.2.5-.3.8-.1l1.8.9c.3.2.4.5.2.8-.5 1-1.3 1.5-2.4 1.2-3.4-1-5.8-3.4-6.7-6.7-.3-1 .1-1.6.9-2Z" fill="currentColor"/></svg> Let’s talk on WhatsApp <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><p class="closing-hint">Pick a model. Ask a question. Send an idea.</p></div></div></section>
 </main>
 <footer class="footer wrap"><div class="footer-top"><div><a class="brand" href="#top"><img src="assets/logo.png" alt="" width="36" height="36">Lumenera<span class="brand-dot" aria-hidden="true"></span></a><p>Little things, printed in PLA.<br>Made for you. Delivered across Pakistan.</p></div><div class="footer-contact"><a class="phone-link" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I&#39;d%20like%20to%20get%20something%203D%20printed.%20Please%20help%20me%20choose%20a%20model%20and%20confirm%20the%20print%20price%2C%20colours%20and%20delivery." target="_blank" rel="noopener noreferrer">+92 348 7259122</a><button type="button" id="copy-number" class="copy-button" hidden>Copy number</button><span id="copy-status" class="copy-status" role="status" aria-live="polite"></span><a href="mailto:lumeneraaccessories@gmail.com">lumeneraaccessories@gmail.com</a></div></div><div class="footer-bottom"><span>© 2026 Lumenera</span><span>Rs 15 / gram · PLA printing</span><a href="credits.html">Image & model credits <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></footer>
-<div class="mobile-order"><span>Something in mind?<small>Let’s make it yours.</small></span><a class="button button--wa" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I&#39;d%20like%20to%20get%20something%203D%20printed.%20Please%20help%20me%20choose%20a%20model%20and%20confirm%20the%20print%20price%2C%20colours%20and%20delivery." target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.7 7.4L3 20.5l1.4-4.7A8.5 8.5 0 1 1 20.5 11.7Z" stroke="currentColor" stroke-width="1.65" stroke-linejoin="round"/><path d="M8.2 7.5c.3-.2.7-.1.9.2l1 1.7c.2.3.1.6-.1.8l-.6.7a6.8 6.8 0 0 0 3.5 3.3l.7-.8c.2-.2.5-.3.8-.1l1.8.9c.3.2.4.5.2.8-.5 1-1.3 1.5-2.4 1.2-3.4-1-5.8-3.4-6.7-6.7-.3-1 .1-1.6.9-2Z" fill="currentColor"/></svg> WhatsApp us <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+<aside class="printer-corner" hidden inert aria-label="Decorative printing illustration">
+ <div class="printer-controls"><button class="printer-dismiss" type="button" aria-label="Hide printer illustration"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button></div>
+ <svg class="printer-scene" width="180" height="120" viewBox="0 0 180 120" fill="none" aria-hidden="true" focusable="false">
+ <defs>
+  <clipPath id="printer-desktop-pot"><path d="M62 54H118L111 102H69Z"/></clipPath>
+  <clipPath id="printer-desktop-reveal"><rect data-printer-reveal x="60" y="54" width="60" height="48" transform="translate(0 102) scale(1 0) translate(0 -102)"/></clipPath>
+ </defs>
+ <path d="M23 12V105M157 12V105" stroke="var(--ink)" stroke-width="6"/>
+ <path d="M23 17V101M157 17V101" stroke="var(--line)" stroke-width="1.5"/>
+ <rect x="18" y="6" width="144" height="8" rx="2" fill="var(--ink)"/>
+ <path d="M29 10H151" stroke="var(--line)" stroke-width="1"/>
+ <rect x="13" y="107" width="154" height="7" rx="2" fill="var(--ink)"/>
+ <path d="M29 102H151L157 107H23Z" fill="var(--peach)" stroke="var(--ink)" stroke-width="1.5" stroke-linejoin="round"/>
+ <path d="M38 104.5H142" stroke="var(--white)" stroke-width="1.5"/>
+ <g clip-path="url(#printer-desktop-reveal)">
+  <g clip-path="url(#printer-desktop-pot)">
+   <path d="M62 54H118L111 102H69Z" fill="var(--red)"/>
+   <path d="M68 58L74 100M77 58L80 102M86 58L87 102M95 58L94 102M104 58L101 102M113 58L107 100" stroke="var(--white)" stroke-opacity=".28" stroke-width="1.3"/>
+   <path d="M60 54.6H120M60 55.8H120M60 57.0H120M60 58.2H120M60 59.4H120M60 60.6H120M60 61.8H120M60 63.0H120M60 64.2H120M60 65.4H120M60 66.6H120M60 67.8H120M60 69.0H120M60 70.2H120M60 71.4H120M60 72.6H120M60 73.8H120M60 75.0H120M60 76.2H120M60 77.4H120M60 78.6H120M60 79.8H120M60 81.0H120M60 82.2H120M60 83.4H120M60 84.6H120M60 85.8H120M60 87.0H120M60 88.2H120M60 89.4H120M60 90.6H120M60 91.8H120M60 93.0H120M60 94.2H120M60 95.4H120M60 96.6H120M60 97.8H120M60 99.0H120M60 100.2H120M60 101.4H120" stroke="var(--ink)" stroke-opacity=".2" stroke-width=".45"/>
+  </g>
+  <ellipse cx="90" cy="56" rx="28" ry="2" fill="var(--red)"/>
+  <ellipse cx="90" cy="56" rx="22" ry="1.3" fill="var(--peach)"/>
+ </g>
+ <g data-printer-gantry transform="translate(0 100)">
+  <rect x="28" y="-19" width="124" height="7" rx="1" fill="var(--line)" stroke="var(--muted)" stroke-width="1"/>
+  <path d="M31 -15.5H149" stroke="var(--white)" stroke-width="1.5"/>
+ </g>
+ <g data-printer-head transform="translate(43 100)">
+  <rect x="-10" y="-23" width="20" height="16" rx="3" fill="var(--ink)"/>
+  <path d="M-6 -19H6M-6 -16H6M-6 -13H6" stroke="var(--line)" stroke-width="1"/>
+  <path d="M-6 -7H6L3 -3H-3Z" fill="var(--peach)" stroke="var(--ink)" stroke-width="1"/>
+  <path d="M-2 -3H2L0 0Z" fill="var(--ink)"/>
+  <path data-printer-extrusion d="M0 0V2" stroke="var(--red)" stroke-width="1.5" opacity="0"/>
+ </g>
+</svg>
+
+</aside>
+<div class="mobile-order"><span class="mobile-order-prompt">Something in mind?<small>Let’s make it yours.</small></span><span class="printer-mobile" hidden><svg class="printer-scene" width="180" height="120" viewBox="0 0 180 120" fill="none" aria-hidden="true" focusable="false">
+ <defs>
+  <clipPath id="printer-mobile-pot"><path d="M62 54H118L111 102H69Z"/></clipPath>
+  <clipPath id="printer-mobile-reveal"><rect data-printer-reveal x="60" y="54" width="60" height="48" transform="translate(0 102) scale(1 0) translate(0 -102)"/></clipPath>
+ </defs>
+ <path d="M23 12V105M157 12V105" stroke="var(--ink)" stroke-width="6"/>
+ <path d="M23 17V101M157 17V101" stroke="var(--line)" stroke-width="1.5"/>
+ <rect x="18" y="6" width="144" height="8" rx="2" fill="var(--ink)"/>
+ <path d="M29 10H151" stroke="var(--line)" stroke-width="1"/>
+ <rect x="13" y="107" width="154" height="7" rx="2" fill="var(--ink)"/>
+ <path d="M29 102H151L157 107H23Z" fill="var(--peach)" stroke="var(--ink)" stroke-width="1.5" stroke-linejoin="round"/>
+ <path d="M38 104.5H142" stroke="var(--white)" stroke-width="1.5"/>
+ <g clip-path="url(#printer-mobile-reveal)">
+  <g clip-path="url(#printer-mobile-pot)">
+   <path d="M62 54H118L111 102H69Z" fill="var(--red)"/>
+   <path d="M68 58L74 100M77 58L80 102M86 58L87 102M95 58L94 102M104 58L101 102M113 58L107 100" stroke="var(--white)" stroke-opacity=".28" stroke-width="1.3"/>
+   <path d="M60 54.6H120M60 55.8H120M60 57.0H120M60 58.2H120M60 59.4H120M60 60.6H120M60 61.8H120M60 63.0H120M60 64.2H120M60 65.4H120M60 66.6H120M60 67.8H120M60 69.0H120M60 70.2H120M60 71.4H120M60 72.6H120M60 73.8H120M60 75.0H120M60 76.2H120M60 77.4H120M60 78.6H120M60 79.8H120M60 81.0H120M60 82.2H120M60 83.4H120M60 84.6H120M60 85.8H120M60 87.0H120M60 88.2H120M60 89.4H120M60 90.6H120M60 91.8H120M60 93.0H120M60 94.2H120M60 95.4H120M60 96.6H120M60 97.8H120M60 99.0H120M60 100.2H120M60 101.4H120" stroke="var(--ink)" stroke-opacity=".2" stroke-width=".45"/>
+  </g>
+  <ellipse cx="90" cy="56" rx="28" ry="2" fill="var(--red)"/>
+  <ellipse cx="90" cy="56" rx="22" ry="1.3" fill="var(--peach)"/>
+ </g>
+ <g data-printer-gantry transform="translate(0 100)">
+  <rect x="28" y="-19" width="124" height="7" rx="1" fill="var(--line)" stroke="var(--muted)" stroke-width="1"/>
+  <path d="M31 -15.5H149" stroke="var(--white)" stroke-width="1.5"/>
+ </g>
+ <g data-printer-head transform="translate(43 100)">
+  <rect x="-10" y="-23" width="20" height="16" rx="3" fill="var(--ink)"/>
+  <path d="M-6 -19H6M-6 -16H6M-6 -13H6" stroke="var(--line)" stroke-width="1"/>
+  <path d="M-6 -7H6L3 -3H-3Z" fill="var(--peach)" stroke="var(--ink)" stroke-width="1"/>
+  <path d="M-2 -3H2L0 0Z" fill="var(--ink)"/>
+  <path data-printer-extrusion d="M0 0V2" stroke="var(--red)" stroke-width="1.5" opacity="0"/>
+ </g>
+</svg>
+<span class="printer-mobile-caption">Layer by layer<small>Illustration</small></span></span><a class="button button--wa" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I&#39;d%20like%20to%20get%20something%203D%20printed.%20Please%20help%20me%20choose%20a%20model%20and%20confirm%20the%20print%20price%2C%20colours%20and%20delivery." target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.7 7.4L3 20.5l1.4-4.7A8.5 8.5 0 1 1 20.5 11.7Z" stroke="currentColor" stroke-width="1.65" stroke-linejoin="round"/><path d="M8.2 7.5c.3-.2.7-.1.9.2l1 1.7c.2.3.1.6-.1.8l-.6.7a6.8 6.8 0 0 0 3.5 3.3l.7-.8c.2-.2.5-.3.8-.1l1.8.9c.3.2.4.5.2.8-.5 1-1.3 1.5-2.4 1.2-3.4-1-5.8-3.4-6.7-6.7-.3-1 .1-1.6.9-2Z" fill="currentColor"/></svg> WhatsApp us <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
 </body>
 </html>

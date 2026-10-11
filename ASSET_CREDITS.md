@@ -28,3 +28,7 @@ These are creator example photos, not photographs of Lumenera’s own prints. Ac
 - Interface icons: authored inline SVG.
 
 All display images have matching origin sidecars. Photos were resized into responsive WebP variants; the opening cat photo also has AVIF variants. No object was invented or changed.
+
+## Little printer illustration
+
+The printer and fluted planter are original geometric SVG artwork authored for this Lumenera update. The shared editable scene is `tools/printer.svg`; the build inserts two instances with unique IDs. It uses the existing site palette and no third-party visual asset, animation library or model file. It is labelled as an illustration, not a photograph or a representation of an active customer order.
