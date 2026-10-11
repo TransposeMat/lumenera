@@ -204,6 +204,12 @@ html{--header-height:94px;scroll-padding-top:calc(var(--header-height) + env(saf
 .printer-corner{position:fixed;right:max(24px,env(safe-area-inset-right));bottom:max(24px,env(safe-area-inset-bottom));z-index:4;width:168px;padding:0;background:transparent;border:0;opacity:0;visibility:hidden;pointer-events:none;contain:layout}
 .printer-corner.is-visible{opacity:1;visibility:visible;transition:opacity .12s var(--ease)}
 .printer-scene{display:block;width:100%;height:auto}
+.printer-corner{z-index:12;--drag-safe-top:env(safe-area-inset-top,0px);--drag-safe-right:env(safe-area-inset-right,0px);--drag-safe-bottom:env(safe-area-inset-bottom,0px);--drag-safe-left:env(safe-area-inset-left,0px)}
+.printer-grab{pointer-events:auto;touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none}
+.printer-grab .printer-scene{pointer-events:none}
+.printer-grab:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:4px}
+.printer-corner.is-dragging{will-change:transform}
+.printer-corner.is-dragging .printer-grab{cursor:grabbing}
 .printer-controls{height:44px}
 .printer-dismiss{position:absolute;top:0;right:0;width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;padding:0;background:var(--white);color:var(--ink);pointer-events:auto}
 .printer-dismiss:hover{background:var(--sage);color:var(--ink)}

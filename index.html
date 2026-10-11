@@ -19,12 +19,13 @@
  <link rel="icon" href="assets/logo.png">
  <link rel="preload" href="assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
  <link rel="preload" href="assets/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
- <link rel="stylesheet" href="styles.css?v=20261011-close-3">
+ <link rel="stylesheet" href="styles.css?v=20261011-drag-4">
  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Lumenera PLA 3D printing","serviceType":"PLA 3D printing","areaServed":{"@type":"Country","name":"Pakistan"},"provider":{"@type":"Organization","name":"Lumenera","url":"https://transposemat.github.io/lumenera/","telephone":"+92 348 7259122","email":"lumeneraaccessories@gmail.com","logo":"https://transposemat.github.io/lumenera/assets/logo.png"},"description":"PLA 3D printing at Rs 15 per gram of finished print. Final print price and courier charges confirmed on WhatsApp before approval."}</script>
  <script id="business-config" type="application/json">{"name":"Lumenera","whatsapp":"923487259122","phone":"+92 348 7259122","email":"lumeneraaccessories@gmail.com","rate":15,"currency":"PKR","material":"PLA","area":"Pakistan","canonical":"https://transposemat.github.io/lumenera/"}</script>
  <script src="script.js" defer></script>
  <script src="header.js?v=20261011-header-2" defer></script>
  <script src="printer.js?v=20261011-header-2" defer></script>
+ <script src="printer-drag.js?v=20261011-drag-4" defer></script>
 </head>
 <body>
 <!-- THESIS: A personal object studio: want the thing, tap the thing, have it made.
@@ -85,7 +86,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <footer class="footer wrap"><div class="footer-top"><div><a class="brand" href="#top"><img src="assets/logo.png" alt="" width="36" height="36">Lumenera<span class="brand-dot" aria-hidden="true"></span></a><p>Little things, printed in PLA.<br>Made for you. Delivered across Pakistan.</p></div><div class="footer-contact"><a class="phone-link" href="https://wa.me/923487259122?text=Hi%20Lumenera!%20I&#39;d%20like%20to%20get%20something%203D%20printed.%20Please%20help%20me%20choose%20a%20model%20and%20confirm%20the%20print%20price%2C%20colours%20and%20delivery." target="_blank" rel="noopener noreferrer">+92 348 7259122</a><button type="button" id="copy-number" class="copy-button" hidden>Copy number</button><span id="copy-status" class="copy-status" role="status" aria-live="polite"></span><a href="mailto:lumeneraaccessories@gmail.com">lumeneraaccessories@gmail.com</a></div></div><div class="footer-bottom"><span>© 2026 Lumenera</span><span>Rs 15 / gram · PLA printing</span><a href="credits.html">Image & model credits <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></footer>
 <aside class="printer-corner" hidden inert aria-label="Decorative printing illustration">
  <div class="printer-controls"><button class="printer-dismiss" type="button" aria-label="Hide printer illustration"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button></div>
- <svg class="printer-scene" width="180" height="120" viewBox="0 0 180 120" fill="none" aria-hidden="true" focusable="false">
+ <div class="printer-grab" tabindex="0" role="group" aria-label="Movable printer. Use arrow keys to move, or Home to return to the corner."><svg class="printer-scene" width="180" height="120" viewBox="0 0 180 120" fill="none" aria-hidden="true" focusable="false">
  <defs>
   <clipPath id="printer-corner-pot"><path d="M62 54H118L111 102H69Z"/></clipPath>
   <clipPath id="printer-corner-reveal"><rect data-printer-reveal x="60" y="54" width="60" height="48" transform="translate(0 102) scale(1 0) translate(0 -102)"/></clipPath>
@@ -118,7 +119,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <path data-printer-extrusion d="M0 0V2" stroke="var(--red)" stroke-width="1.5" opacity="0"/>
  </g>
 </svg>
-
+</div>
 </aside>
 </body>
 </html>
