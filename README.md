@@ -2,6 +2,8 @@
 
 Finished static Lumenera storefront. This branch publishes through GitHub Pages from the root.
 
-Expected site: https://transposemat.github.io/lumenera/
+Website: https://transposemat.github.io/lumenera/
 
-Original model imagery and creator credits are preserved in ASSET_CREDITS.md and credits.html.
+The transparent corner printer follows page scrolling, with a circular close button and click-through artwork. The mobile illustration shares the WhatsApp bar. Motion respects reduced-motion preferences and stops after settling; continuous-scroll tracking uses cached geometry and no animation library.
+
+All twelve original models, creator images and WhatsApp ordering links are preserved. Model and image credits are in ASSET_CREDITS.md and credits.html.
