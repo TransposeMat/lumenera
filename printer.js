@@ -15,14 +15,11 @@
  }
  if (typeof module === 'object' && module.exports) {module.exports = {stateForProgress}; return;}
  const corner = document.querySelector('.printer-corner');
- const bar = document.querySelector('.mobile-order');
- const mobilePrinter = document.querySelector('.printer-mobile');
- const fallback = document.querySelector('.mobile-order-prompt');
  const input = document.getElementById('model-link');
- if (!corner || !bar || !mobilePrinter) return;
+ if (!corner) return;
  const mobile = matchMedia('(max-width: 700px)');
  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
- const scenes = [corner, mobilePrinter].map(root => ({
+ const scenes = [corner].map(root => ({
   root, reveal:root.querySelector('[data-printer-reveal]'),
   gantry:root.querySelector('[data-printer-gantry]'),
   head:root.querySelector('[data-printer-head]'), extrusion:root.querySelector('[data-printer-extrusion]')
@@ -57,12 +54,9 @@
    editing = document.activeElement === input;
    const presentation = `${isMobile}:${editing}:${dismissed}`;
    if (presentation !== lastPresentation) {
-    bar.hidden = isMobile && editing;
-    mobilePrinter.hidden = dismissed;
-    fallback.hidden = !dismissed;
-    bar.classList.toggle('has-printer', !dismissed);
-    corner.classList.toggle('is-visible', !isMobile && !dismissed);
-    corner.inert = isMobile || dismissed;
+    const visible = !dismissed && !(isMobile && editing);
+    corner.classList.toggle('is-visible', visible);
+    corner.inert = !visible;
     lastPresentation = presentation;
    }
    presentationDirty = false;
@@ -75,7 +69,7 @@
   const dt = lastTime === null ? 1000 / 60 : Math.min(64, Math.max(0, time - lastTime));
   if (!animate || time - changedAt >= 120 || Math.abs(target - current) < .00001) current = target;
   else current += (target - current) * (1 - Math.exp(-dt / 32));
-  if (!dismissed && !(isMobile && editing)) draw(isMobile ? 1 : 0, isReduced ? 1 : current);
+  if (!dismissed && !(isMobile && editing)) draw(0, isReduced ? 1 : current);
   if (current !== target && animate) {lastTime = time; schedule();}
   else lastTime = null;
  }
