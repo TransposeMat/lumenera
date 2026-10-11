@@ -209,5 +209,11 @@ html{--header-height:94px;scroll-padding-top:calc(var(--header-height) + env(saf
 .printer-dismiss:hover{background:var(--sage);color:var(--ink)}
 .printer-dismiss:focus-visible{outline-offset:3px}
 @media(max-width:700px){.printer-corner{width:128px;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom))}}
+@media(max-width:700px){
+ .printer-dismiss,.printer-dismiss:hover{background:transparent;border:0}
+ .printer-dismiss::before{content:'';position:absolute;width:28px;height:28px;border:1px solid var(--line);border-radius:50%;background:var(--white)}
+ .printer-dismiss:hover::before{background:var(--sage)}
+ .printer-dismiss svg{position:relative}
+}
 @media(max-width:359px){.printer-corner{width:112px}}
 @media(prefers-reduced-motion:reduce){.site-header.is-floating{animation:none}.printer-corner.is-visible{transition:none}}
