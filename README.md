@@ -23,3 +23,5 @@ Pricing now shows the owner-provided order discounts: Rs 2,500+ / Rs 200 off; Rs
 Object-order links use the original green text-and-arrow treatment and 44px targets on desktop and mobile. Per-card attribution rows are removed; the dedicated creator/source credits page remains linked from the collection and footer.
 
 The mobile Menu now has a distinct open state, touch-safe hover feedback and reversible native 180ms opening/120ms closing animation. Escape, outside input, focus leaving and selection dismiss cleanly; crossing to desktop and hiding the tab cancel pending motion. Reduced motion is immediate and no-script native disclosure remains available.
+
+Responsive finish: mobile featured rows follow content height, avoiding the inherited blank gap; collection-to-wallet spacing is tighter. Mobile supporting text and FAQ are more readable, all model inputs use 16px text, filters preserve comfortable targets, and the header has one clean divider. Original product links, all models, wallet, discounts and printer interactions are preserved.
