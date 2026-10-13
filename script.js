@@ -18,7 +18,7 @@
    button.classList.toggle('is-active', active);
    button.setAttribute('aria-pressed', String(active));
   });
-  count.textContent = `${visible} ${labels[category] || 'objects'} to make your own`;
+  count.textContent = `${visible} ${labels[category] || 'objects'} shown.`;
   empty.hidden = visible !== 0;
  }
  filters.hidden = false;

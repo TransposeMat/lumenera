@@ -17,3 +17,5 @@ Grab the printer image with a mouse or finger to reposition it anywhere within t
 Mobile printer artwork is 25% smaller: 96px wide, or 84px below 360px. Desktop remains 168px; close targets, dragging and scroll behavior are preserved.
 
 The Revet Wallet — Nerdy White is featured after the original model collection. Its official product image, checked store price (Rs 1,599 on 13 October 2026), WhatsApp order message and Shopify store link are available without JavaScript. Wallet price and delivery are confirmed in chat. Its imagery is self-hosted and lazy-loaded; provenance is included.
+
+Pricing now shows the owner-provided order discounts: Rs 2,500+ / Rs 200 off; Rs 4,000+ / Rs 350 off; Rs 8,000+ / Rs 700 off. Base printing remains Rs 15/gram, with the applicable discount and separate delivery charge confirmed in the quote. The visible collection count is removed; filter feedback remains available to assistive technology.
