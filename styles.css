@@ -193,23 +193,24 @@ html{--header-height:94px;scroll-padding-top:calc(var(--header-height) + env(saf
 .mobile-menu{display:none}
 @media(max-width:700px){
  html{--header-height:64px}
- .site-header .header{position:relative;width:calc(100% - max(16px,env(safe-area-inset-left)) - max(16px,env(safe-area-inset-right)));margin-left:max(16px,env(safe-area-inset-left));height:var(--header-height);display:grid;grid-template-columns:minmax(0,1fr) auto 44px;gap:6px;padding:0}
+ .site-header .header{position:relative;width:calc(100% - max(20px,env(safe-area-inset-left)) - max(20px,env(safe-area-inset-right)));margin-left:max(20px,env(safe-area-inset-left));height:var(--header-height);display:grid;grid-template-columns:minmax(0,1fr) 44px 60px;gap:12px;padding:0}
  .site-header .brand{font-size:20px;letter-spacing:-.035em;gap:5px;white-space:nowrap}
  .site-header .brand img{width:24px;height:30px}
  .site-header .brand-dot{width:5px;height:5px;margin:0 0 7px -2px}
- .site-header .header-wa{min-height:44px;gap:6px;padding:10px;font-size:12px;white-space:nowrap}
- .site-header .header-wa>svg:first-child{display:block;width:16px;height:16px}
+ .site-header .header-wa{width:44px;min-height:44px;gap:0;padding:10px;border-radius:50%;background:var(--sage);color:var(--green);white-space:nowrap}
+ .site-header .header-wa:hover{background:var(--green);color:var(--white);transform:none}
+ .site-header .header-wa>svg:first-child{display:block;width:23px;height:23px}
  .site-header .header-wa>svg:last-child{display:none}
- .site-header .header-wa .header-wa-tail{display:none}
+ .site-header .header-wa span{display:none}
  .site-header .nav{display:none}
  .mobile-menu{display:block}
- .mobile-menu summary{display:grid;place-items:center;width:44px;height:44px;list-style:none;cursor:pointer;border-radius:6px;color:var(--ink)}
+ .mobile-menu summary{display:flex;align-items:center;justify-content:center;gap:5px;width:60px;height:44px;min-height:44px;padding:0;list-style:none;cursor:pointer;border-radius:4px;color:var(--ink);font-size:12px;font-weight:600}
  .mobile-menu summary::-webkit-details-marker{display:none}
  .mobile-menu summary:hover,.mobile-menu[open] summary{background:var(--sage)}
- .menu-cross,.mobile-menu[open] .menu-lines{display:none}
- .mobile-menu[open] .menu-cross{display:block}
- .mobile-menu nav{position:absolute;right:0;top:calc(100% + 8px);width:min(220px,100%);padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--paper)}
- .mobile-menu nav a{display:flex;align-items:center;min-height:44px;padding:10px 12px;text-decoration:none;font-size:14px;font-weight:600;border-radius:4px}
+ .menu-chevron{transition:transform .16s var(--ease)}
+ .mobile-menu[open] .menu-chevron{transform:rotate(180deg)}
+ .mobile-menu nav{position:absolute;right:0;top:100%;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 0;border-bottom:1px solid var(--line);background:var(--paper)}
+ .mobile-menu nav a{display:flex;align-items:center;justify-content:center;min-height:44px;padding:10px 8px;text-decoration:none;font-size:13px;font-weight:600;border-radius:4px}
  .mobile-menu nav a:hover{background:var(--sage);color:var(--red)}
 }
 @media(max-width:359px){.site-header .brand{font-size:18px;gap:4px}.site-header .brand img{width:22px}}
@@ -227,12 +228,12 @@ html{--header-height:94px;scroll-padding-top:calc(var(--header-height) + env(saf
 .printer-dismiss{position:absolute;top:0;right:0;width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;padding:0;background:var(--white);color:var(--ink);pointer-events:auto}
 .printer-dismiss:hover{background:var(--sage);color:var(--ink)}
 .printer-dismiss:focus-visible{outline-offset:3px}
-@media(max-width:700px){.printer-corner{width:128px;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom))}}
+@media(max-width:700px){.printer-corner{width:96px;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom))}}
 @media(max-width:700px){
  .printer-dismiss,.printer-dismiss:hover{background:transparent;border:0}
  .printer-dismiss::before{content:'';position:absolute;width:28px;height:28px;border:1px solid var(--line);border-radius:50%;background:var(--white)}
  .printer-dismiss:hover::before{background:var(--sage)}
  .printer-dismiss svg{position:relative}
 }
-@media(max-width:359px){.printer-corner{width:112px}}
+@media(max-width:359px){.printer-corner{width:84px}}
 @media(prefers-reduced-motion:reduce){.printer-corner.is-visible{transition:none}}
