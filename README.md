@@ -10,6 +10,6 @@ The scroll controller follows new positions immediately and settles within appro
 
 All twelve original models, creator images and WhatsApp ordering links are preserved. Model and image credits are in ASSET_CREDITS.md and credits.html.
 
-The ivory header slides down from above once its original position scrolls away, then stays available. Explore models, How to order and WhatsApp are visible at every screen size. The mobile header uses two rows. There is no price-calculator control.
+The ivory header is fixed from first paint at every screen size, without a delayed entrance or scroll threshold. Desktop keeps its 94px row with visible navigation. Mobile uses a compact 64px row with the logo, WhatsApp and a native Menu toggle containing Explore models and How to order. The menu supports keyboard navigation and works without JavaScript. There is no price-calculator control.
 
 Grab the printer image with a mouse or finger to reposition it anywhere within the visible screen. The scroll-print animation remains independent. Position resets on reload, resize keeps it reachable, and the close button still works. Keyboard arrows move the focused image and Home restores the corner.

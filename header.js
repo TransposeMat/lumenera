@@ -1,28 +1,23 @@
 (() => {
  'use strict';
- const header = document.querySelector('.site-header');
- const anchor = document.querySelector('.header-anchor');
- if (!header || !anchor) return;
- let frame = 0, dirty = true, height = 0, floating = false;
- function update() {
-  frame = 0;
-  if (document.hidden) return;
-  if (dirty) {height = anchor.offsetHeight; dirty = false;}
-  // Small hysteresis prevents flickering when scrolling around the threshold.
-  const next = floating ? scrollY > height : scrollY > height + 8;
-  if (next !== floating) {
-   floating = next;
-   header.classList.toggle('is-floating', floating);
-  }
- }
- function schedule() {if (!frame && !document.hidden) frame = requestAnimationFrame(update);}
- function resize() {dirty = true; schedule();}
- addEventListener('scroll', schedule, {passive:true});
- addEventListener('resize', resize, {passive:true});
- addEventListener('pageshow', resize);
- document.addEventListener('visibilitychange', () => {
-  if (document.hidden) {cancelAnimationFrame(frame); frame = 0;} else resize();
+ // CSS pins the header, including when scripts fail. Only the menu needs enhancement.
+ const menu = document.querySelector('.mobile-menu');
+ if (!menu) return;
+ const toggle = menu.querySelector('summary');
+ menu.addEventListener('click', event => {
+  if (event.target.closest('a')) menu.open = false;
  });
- if ('ResizeObserver' in window) new ResizeObserver(resize).observe(anchor);
- schedule();
+ document.addEventListener('click', event => {
+  if (menu.open && !menu.contains(event.target)) menu.open = false;
+ });
+ document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && menu.open) {
+   menu.open = false;
+   toggle.focus({preventScroll:true});
+  }
+ });
+ // Close the popover when keyboard focus returns to the page.
+ document.addEventListener('focusin', event => {
+  if (menu.open && !menu.contains(event.target)) menu.open = false;
+ });
 })();
