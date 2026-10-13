@@ -32,3 +32,8 @@ All display images have matching origin sidecars. Photos were resized into respo
 ## Little printer illustration
 
 The printer and fluted planter are original geometric SVG artwork authored for this Lumenera update. The shared editable scene is `tools/printer.svg`; the build inserts two instances with unique IDs. It uses the existing site palette and no third-party visual asset, animation library or model file. It is labelled as an illustration, not a photograph or a representation of an active customer order.
+
+
+## Revet Wallet — Nerdy White
+
+Official product image from [Lumenera’s Shopify listing](https://lumeneraaccessories.myshopify.com/products/the-revet-wallet-nerdy-white), added at the business owner’s request. Full product retained; resized to 400×560 and 800×1120 WebP. Files: assets/products/revet-wallet-400.webp and revet-wallet-800.webp, each with a provenance sidecar. No new image generated. Product description and Rs 1,599 price checked on 13 October 2026.

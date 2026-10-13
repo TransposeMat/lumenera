@@ -15,3 +15,5 @@ The ivory header is fixed from first paint at every screen size, without a delay
 Grab the printer image with a mouse or finger to reposition it anywhere within the visible screen. The scroll-print animation remains independent. Position resets on reload, resize keeps it reachable, and the close button still works. Keyboard arrows move the focused image and Home restores the corner.
 
 Mobile printer artwork is 25% smaller: 96px wide, or 84px below 360px. Desktop remains 168px; close targets, dragging and scroll behavior are preserved.
+
+The Revet Wallet — Nerdy White is featured after the original model collection. Its official product image, checked store price (Rs 1,599 on 13 October 2026), WhatsApp order message and Shopify store link are available without JavaScript. Wallet price and delivery are confirmed in chat. Its imagery is self-hosted and lazy-loaded; provenance is included.
