@@ -226,14 +226,17 @@ html{--header-height:94px;scroll-padding-top:calc(var(--header-height) + env(saf
  .site-header .header-wa span{display:none}
  .site-header .nav{display:none}
  .mobile-menu{display:block}
- .mobile-menu summary{display:flex;align-items:center;justify-content:center;gap:5px;width:60px;height:44px;min-height:44px;padding:0;list-style:none;cursor:pointer;border-radius:4px;color:var(--ink);font-size:12px;font-weight:600}
+ .mobile-menu summary{display:flex;align-items:center;justify-content:center;gap:5px;width:60px;height:44px;min-height:44px;padding:0;list-style:none;cursor:pointer;border:1px solid transparent;border-radius:6px;color:var(--ink);font-size:12px;font-weight:600;transition:background .15s var(--ease),color .15s var(--ease),border-color .15s var(--ease)}
  .mobile-menu summary::-webkit-details-marker{display:none}
- .mobile-menu summary:hover,.mobile-menu[open] summary{background:var(--sage)}
- .menu-chevron{transition:transform .16s var(--ease)}
- .mobile-menu[open] .menu-chevron{transform:rotate(180deg)}
+ .mobile-menu[open]:not(.is-closing) summary{background:var(--sage);color:var(--green);border-color:var(--line)}
+ .mobile-menu summary:active{background:var(--sage);color:var(--green)}
+ .menu-chevron{transition:transform .18s var(--ease)}
+ .mobile-menu.is-closing .menu-chevron,.mobile-menu.is-closing summary{transition-duration:.12s}
+ .mobile-menu[open]:not(.is-closing) .menu-chevron{transform:rotate(180deg)}
  .mobile-menu nav{position:absolute;right:0;top:100%;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 0;border-bottom:1px solid var(--line);background:var(--paper)}
  .mobile-menu nav a{display:flex;align-items:center;justify-content:center;min-height:44px;padding:10px 8px;text-decoration:none;font-size:13px;font-weight:600;border-radius:4px}
- .mobile-menu nav a:hover{background:var(--sage);color:var(--red)}
+ .mobile-menu nav a:active{background:var(--sage);color:var(--green)}
+ .mobile-menu nav a{transition:background .15s var(--ease),color .15s var(--ease)}
 }
 @media(max-width:359px){.site-header .brand{font-size:18px;gap:4px}.site-header .brand img{width:22px}}
 /* One click-through geometric printer at every screen size. */
@@ -260,8 +263,5 @@ html{--header-height:94px;scroll-padding-top:calc(var(--header-height) + env(saf
 @media(max-width:359px){.printer-corner{width:84px}}
 @media(prefers-reduced-motion:reduce){.printer-corner.is-visible{transition:none}}
 
-/* Direct ordering is the primary card action. */
-.print-link,.card-order{min-height:48px;padding:12px 14px;border:0;border-radius:6px;background:var(--green);color:var(--white);font-size:13px;font-weight:700;line-height:1.35;gap:8px;transition:background .2s var(--ease)}
-.print-link:hover,.card-order:hover{background:var(--green-hover);color:var(--white)}
-.print-link svg,.card-order svg{width:18px;height:18px}
-@media(max-width:700px){.print-link,.card-order{font-size:12px;padding:12px}.feature--lead .print-link{font-size:13px}}
+
+@media(max-width:700px) and (hover:hover){.mobile-menu summary:hover{background:var(--sage)}.mobile-menu nav a:hover{background:var(--sage);color:var(--green)}}

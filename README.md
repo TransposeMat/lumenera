@@ -20,4 +20,6 @@ The Revet Wallet — Nerdy White is featured after the original model collection
 
 Pricing now shows the owner-provided order discounts: Rs 2,500+ / Rs 200 off; Rs 4,000+ / Rs 350 off; Rs 8,000+ / Rs 700 off. Base printing remains Rs 15/gram, with the applicable discount and separate delivery charge confirmed in the quote. The visible collection count is removed; filter feedback remains available to assistive technology.
 
-Object-order links use prominent filled green 48px buttons on desktop and mobile. Per-card attribution rows are removed; the dedicated creator/source credits page remains linked from the collection and footer.
+Object-order links use the original green text-and-arrow treatment and 44px targets on desktop and mobile. Per-card attribution rows are removed; the dedicated creator/source credits page remains linked from the collection and footer.
+
+The mobile Menu now has a distinct open state, touch-safe hover feedback and reversible native 180ms opening/120ms closing animation. Escape, outside input, focus leaving and selection dismiss cleanly; crossing to desktop and hiding the tab cancel pending motion. Reduced motion is immediate and no-script native disclosure remains available.
