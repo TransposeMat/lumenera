@@ -289,18 +289,22 @@ html{--header-height:94px;scroll-padding-top:calc(var(--header-height) + env(saf
 .modeling-stage h3::before{content:counter(modeling-step,decimal-leading-zero);display:block;color:var(--green);font-size:11px;font-variant-numeric:tabular-nums;margin-bottom:6px;letter-spacing:.04em}
 .modeling-stage p{font-size:12px;line-height:1.55;color:var(--muted)}
 .modeling-caption{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #c4cebb;margin-top:18px;padding-top:6px;min-height:51px;color:var(--muted);font-size:11px}
-.modeling-replay{display:inline-flex;flex:none;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:4px 8px;border:0;border-radius:6px;background:transparent;color:var(--green);font-size:12px;font-weight:700}
-.modeling-replay:hover{background:var(--white)}
-.modeling-stages.is-playing .modeling-message{animation:modeling-message 4.8s both}
-.modeling-stages.is-playing .modeling-dimensions,.modeling-stages.is-playing .modeling-scene--cad .modeling-bores{animation:modeling-dimensions 4.8s both}
-.modeling-stages.is-playing .modeling-solid{animation:modeling-solid 4.8s both}
-.modeling-stages.is-playing .modeling-printed{animation:modeling-print 4.8s both}
-.modeling-stages.is-playing .modeling-nozzle{animation:modeling-nozzle 4.8s both}
-@keyframes modeling-message{0%{opacity:0;transform:translate(8px,5px)}18%,100%{opacity:1;transform:none}}
-@keyframes modeling-dimensions{0%,21%{opacity:0}41%,100%{opacity:1}}
-@keyframes modeling-solid{0%,40%{opacity:0}58%,100%{opacity:1}}
-@keyframes modeling-print{0%,58%{clip-path:inset(100% 0 0)}58%{animation-timing-function:steps(12,end)}94%,100%{clip-path:inset(0)}}
-@keyframes modeling-nozzle{0%,58%{transform:translateY(43px)}58%{animation-timing-function:steps(12,end)}94%,100%{transform:none}}
+.modeling-toggle{display:inline-flex;flex:none;align-items:center;justify-content:center;gap:6px;min-width:75px;min-height:44px;padding:4px 8px;border:0;border-radius:6px;background:transparent;color:var(--green);font-size:12px;font-weight:700}
+.modeling-toggle:hover{background:var(--white)}
+.modeling-play-icon,.modeling-toggle.is-paused .modeling-pause-icon{display:none}
+.modeling-toggle.is-paused .modeling-play-icon{display:inline}
+@media(prefers-reduced-motion:no-preference){
+ .modeling-stages.is-playing .modeling-message{animation:modeling-message 4.4s infinite}
+ .modeling-stages.is-playing .modeling-dimensions,.modeling-stages.is-playing .modeling-scene--cad .modeling-bores{animation:modeling-dimensions 5.8s infinite}
+ .modeling-stages.is-playing .modeling-solid{animation:modeling-solid 5.8s infinite}
+ .modeling-stages.is-playing .modeling-printed{animation:modeling-print 6.4s linear infinite}
+ .modeling-stages.is-playing .modeling-nozzle{animation:modeling-nozzle 6.4s linear infinite}
+}
+@keyframes modeling-message{0%{opacity:0;transform:translate(8px,5px)}19%,81%{opacity:1;transform:none}100%{opacity:0;transform:translate(8px,5px)}}
+@keyframes modeling-dimensions{0%{opacity:0}24%,83%{opacity:1}100%{opacity:0}}
+@keyframes modeling-solid{0%,23%{opacity:0}44%,81%{opacity:1}100%{opacity:0}}
+@keyframes modeling-print{0%{clip-path:inset(100% 0 0);opacity:1;animation-timing-function:steps(12,end)}57%,82%{clip-path:inset(0);opacity:1}100%{clip-path:inset(0);opacity:0}}
+@keyframes modeling-nozzle{0%{transform:translateY(50px);animation-timing-function:steps(12,end)}57%,82%{transform:translateY(-5px)}100%{transform:translateY(50px)}}
 @media(max-width:900px){.modeling-layout{grid-template-columns:minmax(0,1fr)}.modeling-copy p{max-width:54ch}}
 @media(min-width:701px) and (max-width:850px){.site-header .header{gap:14px}.site-header .nav{gap:14px}.site-header .nav a{font-size:13px;white-space:nowrap}.site-header .header-wa{padding-inline:14px;white-space:nowrap}.header-wa-tail,.site-header .header-wa>svg:last-child{display:none}}
 @media(max-width:700px){.mobile-menu nav{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}.mobile-menu nav a{padding:6px 3px;text-align:center;font-size:12px;line-height:1.25}}
@@ -311,7 +315,7 @@ html{--header-height:94px;scroll-padding-top:calc(var(--header-height) + env(saf
  .modeling-scene{margin:0}
  .modeling-stage h3::before{display:inline;margin:0 5px 0 0}
  .modeling-caption{margin-top:8px;justify-content:flex-start}
- .modeling-replay{order:-1}
+ .modeling-toggle{order:-1}
  .modeling-cta{width:100%;padding-inline:10px;gap:7px}
 }
-@media(prefers-reduced-motion:reduce){.modeling-replay{display:none}}
+@media(prefers-reduced-motion:reduce){.modeling-toggle{display:none}}

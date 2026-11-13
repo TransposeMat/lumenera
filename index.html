@@ -19,14 +19,14 @@
  <link rel="icon" href="assets/logo.png">
  <link rel="preload" href="assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
  <link rel="preload" href="assets/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
- <link rel="stylesheet" href="styles.css?v=20261113-modeling">
+ <link rel="stylesheet" href="styles.css?v=modeling-loops">
  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Lumenera 3D modeling and PLA printing","serviceType":["3D modeling and printing","PLA 3D printing"],"areaServed":{"@type":"Country","name":"Pakistan"},"provider":{"@type":"Organization","name":"Lumenera","url":"https://transposemat.github.io/lumenera/","telephone":"+92 348 7259122","email":"lumeneraaccessories@gmail.com","logo":"https://transposemat.github.io/lumenera/assets/logo.png"},"description":"Send an idea, reference photos or specifications to get an object modeled and printed, or submit a ready model for PLA printing at Rs 15 per gram. Modeling is quoted based on complexity."}</script>
  <script id="business-config" type="application/json">{"name":"Lumenera","whatsapp":"923487259122","phone":"+92 348 7259122","email":"lumeneraaccessories@gmail.com","rate":15,"discounts":[{"minimum":2500,"amountOff":200},{"minimum":4000,"amountOff":350},{"minimum":8000,"amountOff":700}],"currency":"PKR","material":"PLA","area":"Pakistan","canonical":"https://transposemat.github.io/lumenera/"}</script>
  <script src="script.js?v=20261113-modeling" defer></script>
  <script src="header.js?v=20261013-menu" defer></script>
  <script src="printer.js?v=20261011-header-2" defer></script>
  <script src="printer-drag.js?v=20261011-drag-4" defer></script>
- <script src="modeling.js?v=20261113-modeling" defer></script>
+ <script src="modeling.js?v=modeling-loops" defer></script>
 </head>
 <body>
 <!-- THESIS: A personal object studio: want the thing, tap the thing, have it made.
@@ -87,7 +87,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
  <path d="M24 110V17h112v93M24 27h112" fill="none" stroke="#38493d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
  <g class="modeling-nozzle"><path d="M28 37h104" stroke="#849481" stroke-width="2"/><rect x="103" y="32" width="13" height="10" rx="2" fill="#38493d"/><path d="m106 42 3.5 5 3.5-5z" fill="#38493d"/></g></svg><div><h3>We print it</h3><p>We build the approved design in PLA, layer by layer.</p></div></li>
     </ol>
-    <figcaption class="modeling-caption"><span>Example: a small mounting bracket</span><button class="modeling-replay" type="button" aria-label="Replay modeling and printing animation" hidden><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8a6 6 0 1 1 0 4M4 3v5h5"/></svg>Replay</button></figcaption>
+    <figcaption class="modeling-caption"><span>Example: a small mounting bracket</span><button class="modeling-toggle" type="button" aria-label="Pause workflow animations" hidden><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="modeling-pause-icon" d="M7 4v12m6-12v12"/><path class="modeling-play-icon" d="m7 4 9 6-9 6z"/></svg><span>Pause</span></button></figcaption>
    </figure>
   </div>
  </section>
