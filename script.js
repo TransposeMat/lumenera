@@ -55,7 +55,7 @@
     if (!['https:', 'http:'].includes(url.protocol) || !url.hostname.includes('.') || url.username || url.password) throw new Error('Invalid link');
     model = value;
    } catch {
-    error.textContent = 'Paste a full model link starting with https://, or leave this blank and share your idea in chat.';
+    error.textContent = 'Paste a full model link starting with https://, or leave this blank to attach a model file in WhatsApp.';
     error.hidden = false; input.setAttribute('aria-invalid', 'true'); input.focus(); return;
    }
   }
