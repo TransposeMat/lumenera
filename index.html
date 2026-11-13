@@ -19,7 +19,7 @@
  <link rel="icon" href="assets/logo.png">
  <link rel="preload" href="assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
  <link rel="preload" href="assets/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
- <link rel="stylesheet" href="styles.css?v=modeling-color-motion">
+ <link rel="stylesheet" href="styles.css?v=modeling-cad-build">
  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Lumenera 3D modeling and PLA printing","serviceType":["3D modeling and printing","PLA 3D printing"],"areaServed":{"@type":"Country","name":"Pakistan"},"provider":{"@type":"Organization","name":"Lumenera","url":"https://transposemat.github.io/lumenera/","telephone":"+92 348 7259122","email":"lumeneraaccessories@gmail.com","logo":"https://transposemat.github.io/lumenera/assets/logo.png"},"description":"Send an idea, reference photos or specifications to get an object modeled and printed, or submit a ready model for PLA printing at Rs 15 per gram. Modeling is quoted based on complexity."}</script>
  <script id="business-config" type="application/json">{"name":"Lumenera","whatsapp":"923487259122","phone":"+92 348 7259122","email":"lumeneraaccessories@gmail.com","rate":15,"discounts":[{"minimum":2500,"amountOff":200},{"minimum":4000,"amountOff":350},{"minimum":8000,"amountOff":700}],"currency":"PKR","material":"PLA","area":"Pakistan","canonical":"https://transposemat.github.io/lumenera/"}</script>
  <script src="script.js?v=20261113-modeling" defer></script>
@@ -87,19 +87,30 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
  <defs><pattern id="modeling-cad-grid" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M8 0H0V8" fill="none" stroke="#8fc3d7" stroke-width=".65" opacity=".3"/></pattern></defs>
  <rect x="7" y="8" width="146" height="112" rx="6" fill="#183746"/>
  <path d="M7 23h146" stroke="#3b6476"/>
- <path d="M17 16h3m5 0h3m5 0h3" stroke="#a4cbd9" stroke-width="1.8" stroke-linecap="round"/>
+ <g fill="none" stroke="#a4cbd9" stroke-width="1" stroke-linejoin="round"><path d="m16 17 5-3 5 3-5 3zM32 19v-5l4-2 4 2v5l-4 2zM32 14l4 2 4-2m-4 2v5"/><circle cx="51" cy="16.5" r="2.6"/></g>
  <path d="M119 16h23" stroke="#4a7284" stroke-linecap="round"/>
  <rect x="13" y="28" width="134" height="86" fill="url(#modeling-cad-grid)"/>
  <g transform="translate(5 14) scale(.91)">
-  <g class="modeling-cad-outline" fill="none" stroke="#b3e4ed" stroke-width="1.45" stroke-linejoin="round"><path pathLength="1" d="M29 93 61 75V30l6-4h64v45l-6 4v6L93 99H29Zm0 0h64l32-18H61m32 18v6m-32-69h64v45m0-45 6-4"/></g>
-  <g class="modeling-bores" fill="none" stroke="#b3e4ed" stroke-width="1.1"><circle cx="77" cy="48" r="5"/><circle cx="109" cy="48" r="5"/><ellipse cx="57" cy="85" rx="6" ry="3.4"/><ellipse cx="91" cy="85" rx="6" ry="3.4"/></g>
-  <g class="modeling-solid"><g stroke="#a6d7e8" stroke-linejoin="round" stroke-width=".85"><polygon points="29,93 93,93 125,75 61,75" fill="#73b2cd"/><polygon points="29,93 93,93 93,99 29,99" fill="#285976"/><polygon points="93,93 125,75 125,81 93,99" fill="#306785"/><polygon points="61,75 125,75 125,30 61,30" fill="#4388ad"/><polygon points="61,30 125,30 131,26 67,26" fill="#a4d5e7"/><polygon points="125,30 131,26 131,71 125,75" fill="#285976"/><g fill="#183746"><circle cx="77" cy="48" r="5"/><circle cx="109" cy="48" r="5"/><ellipse cx="57" cy="85" rx="6" ry="3.4"/><ellipse cx="91" cy="85" rx="6" ry="3.4"/></g></g></g>
-  <g class="modeling-dimensions" fill="none" stroke="#a6deec" stroke-width=".95" stroke-linecap="round">
-   <path d="M29 101v10m64-10v10M29 107h64m-60-3-4 3 4 3m56-6 4 3-4 3M131 30h11m-13 45h13m-4-45v45m-3-41 3-4 3 4m-6 37 3 4 3-4"/>
-   <path d="M73 48h8m-4-4v8m28-4h8m-4-4v8" stroke-dasharray="1.4 1.2"/>
-   <text x="61" y="115" text-anchor="middle" fill="#dcf0f7" stroke="none" font-size="7.5">40 mm</text>
+  <g class="modeling-cad-features">
+   <g stroke="#a6d7e8" stroke-width=".85" stroke-linejoin="round">
+    <g class="modeling-cad-base"><polygon points="29,93 93,93 125,75 61,75" fill="#73b2cd"/><polygon points="29,93 93,93 93,99 29,99" fill="#285976"/><polygon points="93,93 125,75 125,81 93,99" fill="#306785"/></g>
+    <g class="modeling-cad-upright"><polygon points="61,75 125,75 125,30 61,30" fill="#4388ad"/><polygon points="61,30 125,30 131,26 67,26" fill="#a4d5e7"/><polygon points="125,30 131,26 131,71 125,75" fill="#285976"/></g>
+    <g class="modeling-cad-wall-holes" fill="#183746"><circle cx="77" cy="48" r="5"/><circle cx="109" cy="48" r="5"/></g>
+    <g class="modeling-cad-base-holes" fill="#183746"><ellipse cx="57" cy="85" rx="6" ry="3.4"/><ellipse cx="91" cy="85" rx="6" ry="3.4"/></g>
+   </g>
+   <g class="modeling-dimensions" fill="none" stroke="#a6deec" stroke-width=".95" stroke-linecap="round">
+    <path d="M29 101v10m64-10v10M29 107h64m-60-3-4 3 4 3m56-6 4 3-4 3M133 26h11m-16 55h16m-4-55v55m-3-51 3-4 3 4m-6 47 3 4 3-4"/>
+    <path d="M73 48h8m-4-4v8m28-4h8m-4-4v8" stroke-dasharray="1.4 1.2"/>
+    <g fill="#e0f4fb" stroke="none" font-size="9.5" font-weight="700" text-anchor="middle">
+     <text x="61" y="115">40 mm</text><text x="151" y="54" transform="rotate(-90 151 54)">30 mm</text>
+    </g>
+   </g>
   </g>
- </g></svg></li>
+  <g class="modeling-cad-cursor" opacity="0">
+   <circle class="modeling-cad-click" cx="0" cy="0" r="5.3" fill="none" stroke="#d7f3fd" stroke-width="1.2"/>
+   <path d="M0 0v13l3.7-3.3 2.4 5.3 2.4-1.1-2.4-5.1H11Z" fill="#fffaf0" stroke="#102c38" stroke-width="1.05" stroke-linejoin="round"/>
+  </g>
+ </g></svg><span class="sr-only">Example bracket: 40 mm wide and 30 mm high.</span></li>
      <li class="modeling-stage"><h3>We print it</h3><svg class="modeling-scene modeling-scene--print" viewBox="0 0 160 128" width="160" height="128" aria-hidden="true" focusable="false">
  <defs>
   <clipPath id="modeling-print-shape"><polygon points="29,93 93,93 125,75 61,75"/><polygon points="29,93 93,93 93,99 29,99"/><polygon points="93,93 125,75 125,81 93,99"/><polygon points="61,75 125,75 125,30 61,30"/><polygon points="61,30 125,30 131,26 67,26"/><polygon points="125,30 131,26 131,71 125,75"/></clipPath>
